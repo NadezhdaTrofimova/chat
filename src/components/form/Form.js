@@ -1,17 +1,20 @@
+import styles from './Form.module.css'
 import Input from "../input/Input";
 import Button from "../button/Button";
 
 
-const Form = () => {
+const Form = ({optionsInput}) => {
+
+
+    const titleRegButton = {title: 'Зарегистрироваться'}
+
+
     return (
-        <>
-            <Input/>
-            <Input/>
-            <Input/>
-            <Input/>
-            <Input/>
-            <Button/>
-        </>
+        <form className={styles.form}>
+            <Input optionsInput={optionsInput}/>
+            <Button titleButton={titleRegButton}/>
+        </form>
+
     )
 }
 

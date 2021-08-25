@@ -12,7 +12,7 @@ const Input = ({optionsInput}) => {
                 </div>
                 <div className={styles.inputContainer}>
 
-                    <input className={styles.input} placeholder={param.placeholder} type={param.type}/>
+                    <input className={styles.input} placeholder={param.placeholder} type={param.type} key={param.id}/>
                 </div>
             </div>
             )}
