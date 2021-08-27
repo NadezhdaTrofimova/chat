@@ -20,7 +20,7 @@ const ModalWindow = ({optionsInput, titleButton, content}) => {
     return (
         <div>
             <button onClick={openModal}>Регистрация</button>
-            <Modal className={styles.modal} isOpen={modalIsOpen} onRequestClose={closeModal}>
+            <Modal className={styles.modal} isOpen={modalIsOpen} onRequestClose={closeModal} ariaHideApp={false}>
                 <TopForm content={content}/>
                 <Form optionsInput={optionsInput} titleButton={titleButton}/>
             </Modal>
