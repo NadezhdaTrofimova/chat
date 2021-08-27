@@ -13,7 +13,7 @@ const Input = ({optionsInput, setOptionsInput}) => {
 
     return (
         <>
-            {optionsInput.map(param =>
+            {optionsInput.map((param) =>
                 <div className={`${styles.mainInputContainer} ${param.isNotVisibility && styles.isNotVisibility}`}
                      key={param.id}>
                     <div className={styles.iconBackground}>
@@ -28,7 +28,6 @@ const Input = ({optionsInput, setOptionsInput}) => {
                     </div>
                 </div>
             )}
-
         </>
     )
 }

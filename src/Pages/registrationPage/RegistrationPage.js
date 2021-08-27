@@ -9,7 +9,7 @@ import showPassword from './../../image/inputIcons/showPassword.png'
 
 const RegistrationPage = () => {
 
-    const optionsRegInput = [
+    const [optionsRegInput, setOptionsRegInput] = React.useState([
         {
             id: 1,
             placeholder: 'Имя',
@@ -17,7 +17,8 @@ const RegistrationPage = () => {
             icon: image1,
             isNotVisibility: false,
             showPassword: showPassword,
-            isNotVisibleShowPassword: true
+            isNotVisibleShowPassword: true,
+            flagIcon: false
         },
         {
             id: 2,
@@ -26,7 +27,8 @@ const RegistrationPage = () => {
             icon: image1,
             isNotVisibility: false,
             showPassword: showPassword,
-            isNotVisibleShowPassword: true
+            isNotVisibleShowPassword: true,
+            flagIcon: false
         },
         {
             id: 3,
@@ -35,7 +37,8 @@ const RegistrationPage = () => {
             icon: image2,
             isNotVisibility: false,
             showPassword: showPassword,
-            isNotVisibleShowPassword: true
+            isNotVisibleShowPassword: true,
+            flagIcon: false
         },
         {
             id: 4,
@@ -44,7 +47,8 @@ const RegistrationPage = () => {
             icon: image3,
             isNotVisibility: false,
             showPassword: showPassword,
-            isNotVisibleShowPassword: false
+            isNotVisibleShowPassword: false,
+            flagIcon: false
         },
         {
             id: 5,
@@ -53,14 +57,15 @@ const RegistrationPage = () => {
             icon: image3,
             isNotVisibility: false,
             showPassword: showPassword,
-            isNotVisibleShowPassword: false
-        },
-    ]
+            isNotVisibleShowPassword: false,
+            flagIcon: false
+        }
+    ])
 
 
     return (
         <div>
-            <ModalWindow optionsInput={optionsRegInput}  titleButton='Зарегистрироваться' content='Регистрация'/>
+            <ModalWindow optionsInput={optionsRegInput} setOptionsInput={setOptionsRegInput} titleButton='Зарегистрироваться' content='Регистрация'/>
         </div>
     )
 }
