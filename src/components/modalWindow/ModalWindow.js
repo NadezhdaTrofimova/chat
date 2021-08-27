@@ -1,12 +1,29 @@
+import React from 'react';
+import Modal from 'react-modal';
+import styles from './ModalWindow.module.css'
 import Form from "../form/Form";
-import './ModalWindow.css'
+import TopForm from "../topForm/TopForm";
 
 
-const ModalWindow = ({active, setActive, children}) => {
+const ModalWindow = ({optionsInput, titleButton, content}) => {
+
+    const [modalIsOpen, setIsOpen] = React.useState(false);
+
+    function openModal() {
+        setIsOpen(true);
+    }
+
+    function closeModal() {
+        setIsOpen(false);
+    }
+
     return (
-        <div className={active ? 'modalWindow.active' : 'modalWindow'} onClick={()=>setActive(false)}>
-            <div className={active ? 'modalContent.active' : 'modalContent'} onClick={e => e.stopPropagation()}>modal</div>
-            {children}
+        <div>
+            <button onClick={openModal}>Регистрация</button>
+            <Modal className={styles.modal} isOpen={modalIsOpen} onRequestClose={closeModal}>
+                <TopForm content={content}/>
+                <Form optionsInput={optionsInput} titleButton={titleButton}/>
+            </Modal>
         </div>
     )
 }

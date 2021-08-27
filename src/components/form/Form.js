@@ -3,16 +3,13 @@ import Input from "../input/Input";
 import Button from "../button/Button";
 
 
-const Form = ({optionsInput}) => {
-
-
-    const titleRegButton = {title: 'Зарегистрироваться'}
+const Form = ({optionsInput, titleButton}) => {
 
 
     return (
         <form className={styles.form}>
             <Input optionsInput={optionsInput}/>
-            <Button titleButton={titleRegButton}/>
+            <Button titleButton={titleButton}/>
         </form>
 
     )

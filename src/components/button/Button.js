@@ -5,7 +5,7 @@ const Button = ({titleButton}) => {
 
     return (
         <div className={styles.containerButton}>
-            <button className={styles.button}>{titleButton.title}</button>
+            <button className={styles.button}>{titleButton}</button>
         </div>
     )
 }

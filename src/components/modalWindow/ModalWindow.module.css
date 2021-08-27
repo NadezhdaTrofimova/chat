@@ -1,0 +1,10 @@
+.modal {
+    display: inline-flex;
+    flex-direction: column;
+    position: fixed;
+    top: 50%;
+    margin-top: -260px;
+    left: 50%;
+    margin-left: -215px;
+}
+

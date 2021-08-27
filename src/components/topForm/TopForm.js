@@ -1,13 +1,11 @@
 import styles from './TopForm.module.css'
 
 
-const TopForm = () => {
-
-    const contentRegForm = {content: 'Регистрация'}
+const TopForm = ({content}) => {
 
     return (
         <>
-            <div className={styles.topForm}>{contentRegForm.content}</div>
+            <div className={styles.topForm}>{content}</div>
         </>
     )
 }

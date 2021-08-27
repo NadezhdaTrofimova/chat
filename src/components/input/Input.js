@@ -6,9 +6,9 @@ const Input = ({optionsInput}) => {
     return (
         <>
             {optionsInput.map(param =>
-            <div className={styles.mainInputContainer} visibility={param.visibility} hidden={param.hidden}>
+            <div className={`${styles.mainInputContainer} ${param.isNotVisibility && styles.isNotVisibility}`}>
                 <div className={styles.iconBackground}>
-                    <img className={styles.icon} src={param.icon}/>
+                    <img className={styles.icon} src={param.icon} alt='icon'/>
                 </div>
                 <div className={styles.inputContainer}>
 
