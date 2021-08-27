@@ -1,21 +1,15 @@
 import React from "react";
 import styles from './Input.module.css'
 
+const Input = ({optionsInput, setOptionsInput}) => {
 
-const Input = ({optionsInput}) => {
-
-    const [inputType, setInputType] = React.useState('password');
-    const [flagColor, setFlagColor] = React.useState(false)
-
-    const handleShowPassword = () => {
-        if (inputType === 'password') {
-            setInputType('text')
-            setFlagColor(true)
-        } else {
-            setInputType('password')
-            setFlagColor(false)
-        }
-    }
+    // const handleShowPassword = () => {
+    //     if (optionsInput.type === 'password') {
+    //         setOptionsInput({type: 'text', flagIcon: true})
+    //     } else {
+    //         setOptionsInput({type: 'password', flagIcon: false})
+    //     }
+    // }
 
     return (
         <>
@@ -26,14 +20,15 @@ const Input = ({optionsInput}) => {
                         <img className={styles.icon} src={param.icon} alt='icon'/>
                     </div>
                     <div className={styles.inputContainer}>
-                        <input className={styles.input} placeholder={param.placeholder} type={inputType}/>
+                        <input className={styles.input} placeholder={param.placeholder} type={param.type}/>
                         <img
-                            className={`${styles.iconShowPassword} ${param.isNotVisibleShowPassword && styles.isNotVisibleShowPassword} ${flagColor && styles.iconShowPasswordClicked}`}
-                            src={param.showPassword} alt='eye'
-                            onClick={handleShowPassword}/>
+                            className={`${styles.iconShowPassword} ${param.isNotVisibleShowPassword && styles.isNotVisibleShowPassword} ${param.flagIcon && styles.iconShowPasswordClicked}`}
+                            src={param.showPassword} alt='eye'/>
+                            {/*onClick={handleShowPassword}/>*/}
                     </div>
                 </div>
             )}
+
         </>
     )
 }
