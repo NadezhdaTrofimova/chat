@@ -5,7 +5,7 @@ import Form from "../form/Form";
 import TopForm from "../topForm/TopForm";
 
 
-const ModalWindow = ({optionsInput, setOptionsInput, titleButton, content}) => {
+const ModalWindow = ({optionsInput, titleButton, content}) => {
 
     const [modalIsOpen, setIsOpen] = React.useState(false);
 
@@ -22,7 +22,7 @@ const ModalWindow = ({optionsInput, setOptionsInput, titleButton, content}) => {
             <button onClick={openModal}>Регистрация</button>
             <Modal className={styles.modal} isOpen={modalIsOpen} onRequestClose={closeModal} ariaHideApp={false}>
                 <TopForm content={content}/>
-                <Form optionsInput={optionsInput} setOptionsInput={setOptionsInput} titleButton={titleButton}/>
+                <Form optionsInput={optionsInput} titleButton={titleButton}/>
             </Modal>
         </div>
     )

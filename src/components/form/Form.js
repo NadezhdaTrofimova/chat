@@ -3,15 +3,14 @@ import Input from "../input/Input";
 import Button from "../button/Button";
 
 
-const Form = ({optionsInput, setOptionsInput, titleButton}) => {
+const Form = ({optionsInput, titleButton}) => {
 
 
     return (
         <form className={styles.form}>
-            <Input optionsInput={optionsInput} setOptionsInput={setOptionsInput}/>
+            <Input optionsInput={optionsInput}/>
             <Button titleButton={titleButton}/>
         </form>
-
     )
 }
 
