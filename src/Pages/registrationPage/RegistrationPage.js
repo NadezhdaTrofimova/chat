@@ -6,10 +6,9 @@ import image3 from './../../image/inputIcons/iconForPassword.png'
 import showPassword from './../../image/inputIcons/showPassword.png'
 
 
-
 const RegistrationPage = () => {
 
-    const [optionsRegInput, setOptionsRegInput] = React.useState([
+    const [optionsRegInput] = React.useState([
         {
             id: 1,
             placeholder: 'Имя',
@@ -18,7 +17,6 @@ const RegistrationPage = () => {
             isNotVisibility: false,
             showPassword: showPassword,
             isNotVisibleShowPassword: true,
-            flagIcon: false
         },
         {
             id: 2,
@@ -28,7 +26,6 @@ const RegistrationPage = () => {
             isNotVisibility: false,
             showPassword: showPassword,
             isNotVisibleShowPassword: true,
-            flagIcon: false
         },
         {
             id: 3,
@@ -38,7 +35,6 @@ const RegistrationPage = () => {
             isNotVisibility: false,
             showPassword: showPassword,
             isNotVisibleShowPassword: true,
-            flagIcon: false
         },
         {
             id: 4,
@@ -48,7 +44,6 @@ const RegistrationPage = () => {
             isNotVisibility: false,
             showPassword: showPassword,
             isNotVisibleShowPassword: false,
-            flagIcon: false
         },
         {
             id: 5,
@@ -58,14 +53,13 @@ const RegistrationPage = () => {
             isNotVisibility: false,
             showPassword: showPassword,
             isNotVisibleShowPassword: false,
-            flagIcon: false
         }
     ])
 
 
     return (
         <div>
-            <ModalWindow optionsInput={optionsRegInput} setOptionsInput={setOptionsRegInput} titleButton='Зарегистрироваться' content='Регистрация'/>
+            <ModalWindow optionsInput={optionsRegInput} titleButton='Зарегистрироваться' content='Регистрация'/>
         </div>
     )
 }
