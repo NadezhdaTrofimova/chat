@@ -1,9 +1,9 @@
 import React from "react";
 import ModalWindow from "../../components/modalWindow/ModalWindow";
-import image1 from './../../image/inputIcons/iconForNameForname.png'
-import image2 from './../../image/inputIcons/iconForEmail.png'
-import image3 from './../../image/inputIcons/iconForPassword.png'
-import showPassword from './../../image/inputIcons/showPassword.png'
+import image1 from '../../image/inputIcons/iconForNameForname.png'
+import image2 from '../../image/inputIcons/iconForEmail.png'
+import image3 from '../../image/inputIcons/iconForPassword.png'
+import showPassword from '../../image/inputIcons/showPassword.png'
 
 
 const RegistrationPage = () => {
