@@ -1,0 +1,13 @@
+.topForm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(#2A8BF2 0%, #0A6CD6 100%);
+    height: 80px;
+    width: 430px;
+    border-radius: 12px 12px 0 0;
+    color: white;
+    font-family: Montserrat, sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+}

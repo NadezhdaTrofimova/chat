@@ -5,7 +5,9 @@ const TopForm = ({content}) => {
 
     return (
         <>
-            <div className={styles.topForm}>{content}</div>
+            <div className={styles.topForm}>
+                {content}
+            </div>
         </>
     )
 }

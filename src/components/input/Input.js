@@ -3,22 +3,15 @@ import styles from './Input.module.css'
 
 const Input = ({optionsInput}) => {
 
-
     const [isShowPassword, setIsShowPassword] = React.useState(false)
-    const [flagIcon, setFlagIcon] = React.useState(false)
-
 
     const handleShowPassword = () => {
         if (isShowPassword === false) {
-        setIsShowPassword(true)
-        setFlagIcon(true)
-        console.log('yes')}
-        else {
+            setIsShowPassword(true)
+        } else {
             setIsShowPassword(false)
-            setFlagIcon(false)
         }
     }
-
 
     return (
         <>
@@ -29,10 +22,11 @@ const Input = ({optionsInput}) => {
                         <img className={styles.icon} src={parameters.icon} alt='icon'/>
                     </div>
                     <div className={styles.inputContainer}>
-                        <input className={styles.input} placeholder={parameters.placeholder} type={isShowPassword ? 'text' : parameters.type}/>
+                        <input className={styles.input} placeholder={parameters.placeholder}
+                               type={isShowPassword ? 'text' : parameters.type}/>
                         <img
-                            className={`${styles.iconShowPassword} ${parameters.isNotVisibleShowPassword && styles.isNotVisibleShowPassword} ${flagIcon && styles.iconShowPasswordClicked}`}
-                            src={parameters.showPassword} alt='eye'
+                            className={`${styles.iconShowPassword} ${parameters.isNotVisibleShowPassword && styles.isNotVisibleShowPassword}`}
+                            src={isShowPassword ? parameters.showPassword : parameters.notShowPassword} alt='eye'
                             onClick={handleShowPassword}/>
                     </div>
                 </div>

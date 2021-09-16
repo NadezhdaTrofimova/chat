@@ -4,6 +4,7 @@ import image1 from '../../image/inputIcons/iconForNameForname.png'
 import image2 from '../../image/inputIcons/iconForEmail.png'
 import image3 from '../../image/inputIcons/iconForPassword.png'
 import showPassword from '../../image/inputIcons/showPassword.png'
+import closeEye from '../../image/inputIcons/closeEye.png'
 
 
 const RegistrationPage = () => {
@@ -43,6 +44,7 @@ const RegistrationPage = () => {
             icon: image3,
             isNotVisibility: false,
             showPassword: showPassword,
+            notShowPassword: closeEye,
             isNotVisibleShowPassword: false,
         },
         {
@@ -52,10 +54,10 @@ const RegistrationPage = () => {
             icon: image3,
             isNotVisibility: false,
             showPassword: showPassword,
+            notShowPassword: closeEye,
             isNotVisibleShowPassword: false,
         }
     ])
-
 
     return (
         <div>

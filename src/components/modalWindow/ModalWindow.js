@@ -3,9 +3,10 @@ import Modal from 'react-modal';
 import styles from './ModalWindow.module.css'
 import Form from "../form/Form";
 import TopForm from "../topForm/TopForm";
+import MiddleForm from "../middleForm/MiddleForm";
 
 
-const ModalWindow = ({optionsInput, titleButton, content}) => {
+const ModalWindow = ({optionsInput, titleButton, content, icon}) => {
 
     const [modalIsOpen, setIsOpen] = React.useState(false);
 
@@ -21,7 +22,8 @@ const ModalWindow = ({optionsInput, titleButton, content}) => {
         <div>
             <button onClick={openModal}>Регистрация</button>
             <Modal className={styles.modal} isOpen={modalIsOpen} onRequestClose={closeModal} ariaHideApp={false}>
-                <TopForm content={content}/>
+                <TopForm content={content} icon={icon}/>
+                <MiddleForm/>
                 <Form optionsInput={optionsInput} titleButton={titleButton}/>
             </Modal>
         </div>
