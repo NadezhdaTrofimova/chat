@@ -5,6 +5,8 @@ import image2 from '../../image/inputIcons/iconForEmail.png'
 import image3 from '../../image/inputIcons/iconForPassword.png'
 import showPassword from '../../image/inputIcons/showPassword.png'
 import closeEye from '../../image/inputIcons/closeEye.png'
+import TopForm from "../../components/topForm/TopForm";
+import Form from "../../components/form/Form";
 
 
 const RegistrationPage = () => {
@@ -61,7 +63,13 @@ const RegistrationPage = () => {
 
     return (
         <div>
-            <ModalWindow optionsInput={optionsRegInput} titleButton='Зарегистрироваться' content='Регистрация'/>
+            <ModalWindow
+                contentModal={
+                    <>
+                        <TopForm content='Регистрация'/>
+                        <Form optionsInput={optionsRegInput} titleButton='Зарегистрироваться'/>
+                    </>
+                }/>
         </div>
     )
 }

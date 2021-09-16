@@ -5,6 +5,9 @@ import image2 from "../../image/inputIcons/iconForEmail.png";
 import image3 from "../../image/inputIcons/iconForPassword.png";
 import closeEye from "../../image/inputIcons/closeEye.png";
 import siluet from '../../image/inputIcons/siluet.png'
+import Form from "../../components/form/Form";
+import TopForm from "../../components/topForm/TopForm";
+import style from './../../components/topForm/TopForm.module.css'
 
 
 const LoginPage = () => {
@@ -34,7 +37,17 @@ const LoginPage = () => {
 
     return (
         <div>
-            <ModalWindow optionsInput={optionsLogInput} titleButton='Войти' content='' icon = {siluet}/>
+            <ModalWindow
+                contentModal={
+                    <>
+                        <TopForm content={
+                            <div className={style.iconForm}>
+                                <img className={style.iconFormSiluet} src={siluet}/>
+                            </div>
+                        }/>
+                        <Form optionsInput={optionsLogInput} titleButton='Войти'/>
+                    </>
+                }/>
         </div>
 
     )
