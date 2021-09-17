@@ -2,8 +2,7 @@ import React from 'react';
 import Modal from 'react-modal';
 import styles from './ModalWindow.module.css'
 
-
-const ModalWindow = ({contentModal}) => {
+const ModalWindow = ({contentModal, bottomForm}) => {
 
     const [modalIsOpen, setIsOpen] = React.useState(true);
 
@@ -18,7 +17,7 @@ const ModalWindow = ({contentModal}) => {
     return (
         <div>
             {/*<button onClick={openModal}>Регистрация</button>*/}
-            <Modal className={styles.modal} isOpen={modalIsOpen} onRequestClose={closeModal} ariaHideApp={false}>
+            <Modal className={styles.modal} isOpen={modalIsOpen} onRequestClose={closeModal} ariaHideApp={false} bottomForm={bottomForm}>
                 {contentModal}
             </Modal>
         </div>

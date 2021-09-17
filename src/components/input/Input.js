@@ -26,7 +26,7 @@ const Input = ({optionsInput}) => {
                                type={isShowPassword ? 'text' : parameters.type}/>
                         <img
                             className={`${styles.iconShowPassword} ${parameters.isNotVisibleShowPassword && styles.isNotVisibleShowPassword}`}
-                            src={isShowPassword ? parameters.showPassword : parameters.notShowPassword} alt='eye'
+                            src={isShowPassword ? parameters.notShowPassword : parameters.showPassword} alt='eye'
                             onClick={handleShowPassword}/>
                     </div>
                 </div>

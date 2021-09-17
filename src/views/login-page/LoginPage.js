@@ -8,6 +8,7 @@ import siluet from '../../image/inputIcons/siluet.png'
 import Form from "../../components/form/Form";
 import TopForm from "../../components/topForm/TopForm";
 import style from './../../components/topForm/TopForm.module.css'
+import BottomForm from "../../components/bottomForm/BottomForm";
 
 
 const LoginPage = () => {
@@ -45,7 +46,9 @@ const LoginPage = () => {
                                 <img className={style.iconFormSiluet} src={siluet}/>
                             </div>
                         }/>
-                        <Form optionsInput={optionsLogInput} titleButton='Войти'/>
+                        <Form optionsInput={optionsLogInput} titleButton='Войти' bottomForm={
+                            <BottomForm/>
+                        }/>
                     </>
                 }/>
         </div>
