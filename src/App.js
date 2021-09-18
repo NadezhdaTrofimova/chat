@@ -1,11 +1,10 @@
 import React from "react";
-import {Route, Link} from "react-router-dom";
+import {Route} from "react-router-dom";
 
 import './App.css';
 import LoginPage from "./views/login-page";
 import RegistrationPage from "./views/registration-page";
-import RecoverPassword from "./views/recoverPassword-page/RecoverPassword ";
-
+import RecoverPassword from "./views/recover-page/";
 
 function App() {
     return (

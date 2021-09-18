@@ -1,15 +1,17 @@
-import ModalWindow from "../../components/modalWindow/ModalWindow";
 import React from "react";
-import showPassword from "../../image/inputIcons/showPassword.png";
-import image2 from "../../image/inputIcons/iconForEmail.png";
-import image3 from "../../image/inputIcons/iconForPassword.png";
-import closeEye from "../../image/inputIcons/closeEye.png";
-import siluet from '../../image/inputIcons/siluet.png'
-import Form from "../../components/form/Form";
-import TopForm from "../../components/topForm/TopForm";
-import style from './../../components/topForm/TopForm.module.css'
-import BottomForm from "../../components/bottomForm/BottomForm";
 
+import iconOpenEye from "../../image/inputIcons/showPassword.png";
+import iconLetter from "../../image/inputIcons/iconForEmail.png";
+import iconLock from "../../image/inputIcons/iconForPassword.png";
+import closeEye from "../../image/inputIcons/closeEye.png";
+import iconBigAvatar from '../../image/inputIcons/siluet.png'
+
+import style from '../../components/headerForm/HeaderForm.module.css'
+
+import BottomForm from "../../components/bottomForm/BottomForm";
+import ModalWindow from "../../components/modalWindow/ModalWindow";
+import Form from "../../components/form/Form";
+import HeaderForm from "../../components/headerForm/HeaderForm";
 
 const LoginPage = () => {
 
@@ -18,18 +20,18 @@ const LoginPage = () => {
             id: 6,
             placeholder: 'Email',
             type: 'email',
-            icon: image2,
+            icon: iconLetter,
             isNotVisibility: false,
-            showPassword: showPassword,
+            showPassword: iconOpenEye,
             isNotVisibleShowPassword: true,
         },
         {
             id: 7,
             placeholder: 'Пароль',
             type: 'password',
-            icon: image3,
+            icon: iconLock,
             isNotVisibility: false,
-            showPassword: showPassword,
+            showPassword: iconOpenEye,
             notShowPassword: closeEye,
             isNotVisibleShowPassword: false,
         }
@@ -41,18 +43,15 @@ const LoginPage = () => {
             <ModalWindow
                 contentModal={
                     <>
-                        <TopForm content={
+                        <HeaderForm content={
                             <div className={style.iconForm}>
-                                <img className={style.iconFormSiluet} src={siluet}/>
+                                <img className={style.iconFormBigAvatar} src={iconBigAvatar} alt='big-avatar'/>
                             </div>
                         }/>
-                        <Form optionsInput={optionsLogInput} titleButton='Войти' bottomForm={
-                            <BottomForm/>
-                        }/>
+                        <Form optionsInput={optionsLogInput} titleButton='Войти' bottomForm={<BottomForm/>}/>
                     </>
                 }/>
         </div>
-
     )
 }
 

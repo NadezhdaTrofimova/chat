@@ -1,7 +1,7 @@
-import styles from './TopForm.module.css'
+import styles from './HeaderForm.module.css'
 
 
-const TopForm = ({content}) => {
+const HeaderForm = ({content}) => {
 
     return (
         <>
@@ -12,4 +12,4 @@ const TopForm = ({content}) => {
     )
 }
 
-export default TopForm
+export default HeaderForm

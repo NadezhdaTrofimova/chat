@@ -1,13 +1,14 @@
 import React from "react";
-import ModalWindow from "../../components/modalWindow/ModalWindow";
-import image1 from '../../image/inputIcons/iconForNameForname.png'
-import image2 from '../../image/inputIcons/iconForEmail.png'
-import image3 from '../../image/inputIcons/iconForPassword.png'
-import showPassword from '../../image/inputIcons/showPassword.png'
-import closeEye from '../../image/inputIcons/closeEye.png'
-import TopForm from "../../components/topForm/TopForm";
-import Form from "../../components/form/Form";
 
+import iconAvatar from '../../image/inputIcons/iconForNameForname.png'
+import iconLetter from '../../image/inputIcons/iconForEmail.png'
+import iconLock from '../../image/inputIcons/iconForPassword.png'
+import iconOpenEye from '../../image/inputIcons/showPassword.png'
+import iconCloseEye from '../../image/inputIcons/closeEye.png'
+
+import ModalWindow from "../../components/modalWindow/ModalWindow";
+import HeaderForm from "../../components/headerForm/HeaderForm";
+import Form from "../../components/form/Form";
 
 const RegistrationPage = () => {
 
@@ -16,47 +17,47 @@ const RegistrationPage = () => {
             id: 1,
             placeholder: 'Имя',
             type: 'text',
-            icon: image1,
+            icon: iconAvatar,
             isNotVisibility: false,
-            showPassword: showPassword,
+            showPassword: iconOpenEye,
             isNotVisibleShowPassword: true,
         },
         {
             id: 2,
             placeholder: 'Фамилия',
             type: 'text',
-            icon: image1,
+            icon: iconAvatar,
             isNotVisibility: false,
-            showPassword: showPassword,
+            showPassword: iconOpenEye,
             isNotVisibleShowPassword: true,
         },
         {
             id: 3,
             placeholder: 'Email',
             type: 'email',
-            icon: image2,
+            icon: iconLetter,
             isNotVisibility: false,
-            showPassword: showPassword,
+            showPassword: iconOpenEye,
             isNotVisibleShowPassword: true,
         },
         {
             id: 4,
             placeholder: 'Пароль',
             type: 'password',
-            icon: image3,
+            icon: iconLock,
             isNotVisibility: false,
-            showPassword: showPassword,
-            notShowPassword: closeEye,
+            showPassword: iconOpenEye,
+            notShowPassword:iconCloseEye,
             isNotVisibleShowPassword: false,
         },
         {
             id: 5,
             placeholder: 'Повторите пароль',
             type: 'password',
-            icon: image3,
+            icon: iconLock,
             isNotVisibility: false,
-            showPassword: showPassword,
-            notShowPassword: closeEye,
+            showPassword: iconOpenEye,
+            notShowPassword: iconCloseEye,
             isNotVisibleShowPassword: false,
         }
     ])
@@ -66,7 +67,7 @@ const RegistrationPage = () => {
             <ModalWindow
                 contentModal={
                     <>
-                        <TopForm content='Регистрация'/>
+                        <HeaderForm content='Регистрация'/>
                         <Form optionsInput={optionsRegInput} titleButton='Зарегистрироваться'/>
                     </>
                 }/>
