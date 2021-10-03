@@ -1,0 +1,44 @@
+.containerWrapper {
+    border: 13px solid #D4D6F0;
+    background-color: #D4D6F0;
+    border-radius: 7px;
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    border: 1px solid #BABABA;
+    border-radius: 5px;
+    background-color: #ffffff;
+    height: 60px;
+}
+
+.inputContainer {
+    flex-grow: 1;
+}
+
+.textInput {
+    font-family: Montserrat, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    border: none;
+    padding-left: 20px;
+    width: 100%;
+    flex-grow: 1;
+}
+
+.textInput:focus {
+    outline: 0;
+}
+
+
+.textInput::placeholder {
+    font-family: Montserrat, sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+
