@@ -1,10 +1,10 @@
 import React from "react";
 
-import iconOpenEye from "../../image/inputIcons/showPassword.png";
-import iconLetter from "../../image/inputIcons/iconForEmail.png";
-import iconLock from "../../image/inputIcons/iconForPassword.png";
-import closeEye from "../../image/inputIcons/closeEye.png";
-import iconBigAvatar from '../../image/inputIcons/siluet.png'
+import iconOpenEye from "../../image/icons/icon-open-eye.png";
+import iconLetter from "../../image/icons/icon-letter.png";
+import iconLock from "../../image/icons/ico-lock.png";
+import closeEye from "../../image/icons/icon-close-eye.png";
+import iconBigAvatar from '../../image/picture/picture-not-avatar.png'
 
 import style from '../../components/headerForm/HeaderForm.module.css'
 

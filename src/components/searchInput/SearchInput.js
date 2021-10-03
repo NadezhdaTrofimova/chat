@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './SearchInput.module.css'
-import iconButton from "../../image/largeInputIcons/icon-magnifier.png";
+import iconButton from "../../image/icons/icon-magnifier.png";
 
 const SearchInput = () => {
     return (

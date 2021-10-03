@@ -1,10 +1,10 @@
 import React from "react";
 
-import iconAvatar from '../../image/inputIcons/iconForNameForname.png'
-import iconLetter from '../../image/inputIcons/iconForEmail.png'
-import iconLock from '../../image/inputIcons/iconForPassword.png'
-import iconOpenEye from '../../image/inputIcons/showPassword.png'
-import iconCloseEye from '../../image/inputIcons/closeEye.png'
+import iconAvatar from '../../image/icons/icon-man.png'
+import iconLetter from '../../image/icons/icon-letter.png'
+import iconLock from '../../image/icons/ico-lock.png'
+import iconOpenEye from '../../image/icons/icon-open-eye.png'
+import iconCloseEye from '../../image/icons/icon-close-eye.png'
 
 import ModalWindow from "../../components/modalWindow/ModalWindow";
 import HeaderForm from "../../components/headerForm/HeaderForm";

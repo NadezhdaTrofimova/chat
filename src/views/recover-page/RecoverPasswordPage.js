@@ -1,9 +1,9 @@
 import React from "react";
 
-import iconLetter from '../../image/inputIcons/iconForEmail.png'
-import iconLock from '../../image/inputIcons/iconForPassword.png'
-import iconOpenEye from '../../image/inputIcons/showPassword.png'
-import iconCloseEye from '../../image/inputIcons/closeEye.png'
+import iconLetter from '../../image/icons/icon-letter.png'
+import iconLock from '../../image/icons/ico-lock.png'
+import iconOpenEye from '../../image/icons/icon-open-eye.png'
+import iconCloseEye from '../../image/icons/icon-close-eye.png'
 
 import HeaderForm from "../../components/headerForm/HeaderForm";
 import Form from "../../components/form/Form";

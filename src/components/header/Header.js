@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from "react-router-dom"
 import styles from './Header.module.css'
-import iconExit from '../../image/headerIcons/icon-exit.png'
+import iconExit from '../../image/icons/icon-open-door.png'
 
 const Header = ({iconUser, iconVariable, title}) => {
     return (

@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from './MessageField.module.css'
-import iconEmoji from "../../image/largeInputIcons/icon-emoji.png";
-import iconAttach from "../../image/largeInputIcons/icon-clip.png";
-import iconSendMessage from "../../image/largeInputIcons/icon-paper-plane.png";
+import iconEmoji from "../../image/icons/icon-emoji.png";
+import iconAttach from "../../image/icons/icon-clip.png";
+import iconSendMessage from "../../image/icons/icon-paper-plane.png";
 
 const MessageField = () => {
     return (
