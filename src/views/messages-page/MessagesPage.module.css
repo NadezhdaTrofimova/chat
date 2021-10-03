@@ -1,34 +1,4 @@
-.inputContainer {
+.messageContainer {
     margin: 40px 120px;
 }
 
-.buttonContainer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.iconSendMessageWrapper {
-    background: linear-gradient(164.08deg, #2A8BF2 9.54%, #0A6CD6 90.23%);
-    width: 35px;
-    height: 35px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    margin-right: 10px;
-    margin-left: 15px;
-}
-
-.icon {
-    width: 35px;
-    height: 35px;
-    padding: 5px;
-    margin: 5px 15px;
-    cursor: pointer;
-}
-
-.iconSendMessageWrapper > .icon {
-    width: 27px;
-    height: 27px;
-}

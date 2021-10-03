@@ -1,0 +1,79 @@
+.containerWrapper {
+    border: 20px solid #D4D6F0;
+    border-bottom: 40px solid #D4D6F0;;
+    background-color: #D4D6F0;
+    border-radius: 0 0 7px 7px;
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    border: 1px solid #BABABA;
+    border-radius: 5px;
+    background-color: #ffffff;
+    height: 70px;
+}
+
+.inputContainer {
+    flex-grow: 1;
+}
+
+.textInput {
+    font-family: Montserrat, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    border: none;
+    padding-left: 20px;
+    width: 100%;
+    flex-grow: 1;
+    padding-top: 15px;
+    overflow: hidden;
+    resize: none;
+}
+
+.textInput:focus {
+    outline: 0;
+}
+
+
+.textInput::placeholder {
+    font-family: Montserrat, sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    /*padding-top: 10px;*/
+}
+
+
+.buttonContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.iconSendMessageWrapper {
+    background: linear-gradient(164.08deg, #2A8BF2 9.54%, #0A6CD6 90.23%);
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-right: 10px;
+    margin-left: 15px;
+}
+
+.icon {
+    width: 35px;
+    height: 35px;
+    padding: 5px;
+    margin: 5px 15px;
+    cursor: pointer;
+}
+
+.iconSendMessageWrapper > .icon {
+    width: 27px;
+    height: 27px;
+}

@@ -47,7 +47,8 @@ const LoginPage = () => {
                             <div className={style.iconForm}>
                                 <img className={style.iconFormBigAvatar} src={iconBigAvatar} alt='big-avatar'/>
                             </div>
-                        }/>
+                        }
+                        />
                         <Form optionsInput={optionsLogInput} titleButton='Войти' bottomForm={<BottomForm/>}/>
                     </>
                 }/>

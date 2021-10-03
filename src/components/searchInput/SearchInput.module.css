@@ -42,3 +42,30 @@
 }
 
 
+
+.buttonContainer {
+    width: 170px;
+    height: 40px;
+    border-radius: 5px;
+    background: linear-gradient(206.57deg, #6476F4 0%, #3246D3 83.33%);
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 1;
+}
+
+
+.buttonIcon {
+    width: 15px;
+    height: 15px;
+}
+
+.buttonTitle {
+    font-family: Montserrat, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #ffffff;
+    margin-left: 5px;
+}
+
