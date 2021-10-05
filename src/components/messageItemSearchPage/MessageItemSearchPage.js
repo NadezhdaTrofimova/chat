@@ -1,8 +1,8 @@
 import React from 'react';
-import styles from './MessageItem.module.css'
+import styles from './MessageItemSearchPage.module.css'
 import photoUser from '../../image/usersPhoto/icon-user3.png'
 
-const MessageItem = () => {
+const MessageItemSearchPage = () => {
     return (
         <>
             <li>
@@ -30,4 +30,4 @@ const MessageItem = () => {
     );
 };
 
-export default MessageItem;
+export default MessageItemSearchPage;
