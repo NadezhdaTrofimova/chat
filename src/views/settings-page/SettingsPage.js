@@ -11,11 +11,13 @@ const SettingsPage = () => {
     return (
         <>
             <div className={styles.settingsPage}>
-                <Header
-                    iconUser={iconUser}
-                    iconVariable={iconSave}
-                    title='Сохранить'
-                />
+                <div className={styles.headerContainer}>
+                    <Header
+                        iconUser={iconUser}
+                        iconVariable={iconSave}
+                        title='Сохранить'
+                    />
+                </div>
                 <section className={styles.mainContainer}>
                     <div className={styles.photoContainer}>
                         <img className={styles.userPhoto} src={photoUser} alt="user-photo"/>
