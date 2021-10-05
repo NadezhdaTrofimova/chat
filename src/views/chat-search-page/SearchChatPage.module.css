@@ -1,5 +1,61 @@
-.inputContainer {
-    display: flex;
-    margin: 30px 120px;
+.searchChatPage {
+    height: 100vh;
+    width: 100%;
+    background-color: #F5F5F5;
 }
 
+.inputContainer {
+    display: flex;
+    margin: 20px 120px 0 120px;
+}
+
+.messageMainContainer {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 100px 10px 120px;
+    height: 400px;
+}
+
+.messageContainer {
+    min-height: 300px;
+    overflow-y: scroll;
+    padding-right: 20px;
+}
+
+
+.messageContainer::-webkit-scrollbar {
+    width: 12px;
+}
+
+.messageContainer::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,.3);
+    background-color: #D4D6F0;
+}
+
+.messageContainer::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    background-color: #F5F5F5;
+}
+
+.buttonContainer {
+    position: fixed;
+    bottom: 20px;
+    right: 130px;
+    width: 140px;
+    height: 40px;
+    border-radius: 5px;
+    background: linear-gradient(206.57deg, #6476F4 0%, #3246D3 83.33%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.buttonTitle {
+    font-family: Montserrat, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #ffffff;
+}
