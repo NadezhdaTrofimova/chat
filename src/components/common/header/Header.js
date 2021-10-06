@@ -1,17 +1,17 @@
 import React from 'react';
 import {Link} from "react-router-dom"
 import styles from './Header.module.css'
-import iconExit from '../../image/icons/icon-open-door.png'
+import iconExit from '../../../image/icons/icon-open-door.png'
 
 const Header = ({iconUser, iconVariable, title}) => {
     return (
-        <div className={styles.wrapper}>
+        <div className={styles.headerWrapper}>
             <div className={styles.headerContainer}>
-                <div className={styles.userContainer}>
-                    <img className={styles.userImage} src={iconUser} alt="user-icon"/>
-                    <p className={styles.userTitle}>Username</p>
+                <div className={styles.userInfoContainer}>
+                    <img className={styles.userAvatar} src={iconUser} alt="user-icon"/>
+                    <p className={styles.userName}>Username</p>
                 </div>
-                <Link className={styles.settingsContainer}>
+                <Link to='/settings'  className={styles.settingsContainer}>
                     <img className={styles.settingsImage} src={iconVariable} alt="settings-icon"/>
                     <p className={styles.settingsText}>{title}</p>
                 </Link>

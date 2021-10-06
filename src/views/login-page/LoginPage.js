@@ -4,16 +4,28 @@ import iconOpenEye from "../../image/icons/icon-open-eye.png";
 import iconLetter from "../../image/icons/icon-letter.png";
 import iconLock from "../../image/icons/ico-lock.png";
 import closeEye from "../../image/icons/icon-close-eye.png";
-import iconBigAvatar from '../../image/picture/picture-not-avatar.png'
+import iconBigAvatar from '../../image/pictures/picture-not-avatar.png'
 
-import style from '../../components/headerForm/HeaderForm.module.css'
+import style from '../../components/common/form/headerForm/HeaderForm.module.css'
 
-import BottomForm from "../../components/bottomForm/BottomForm";
-import ModalWindow from "../../components/modalWindow/ModalWindow";
-import Form from "../../components/form/Form";
-import HeaderForm from "../../components/headerForm/HeaderForm";
+import BottomForm from "../../components/common/form/bottomForm/BottomForm";
+import ModalWindow from "../../components/common/modalWindow/ModalWindow";
+import Form from "../../components/common/form/Form";
+import HeaderForm from "../../components/common/form/headerForm/HeaderForm";
 
 const LoginPage = () => {
+
+    const [emailLog, setEmailLog] = React.useState('')
+    const [passwordLog, setPasswordLog] = React.useState('')
+
+    const handleChangeEmailLog = (event) => {
+        setEmailLog(event.target.value)
+    }
+
+    const handleChangePasswordLog = (event) => {
+        setPasswordLog(event.target.value)
+    }
+
 
     const [optionsLogInput] = React.useState([
         {
@@ -24,6 +36,8 @@ const LoginPage = () => {
             isNotVisibility: false,
             showPassword: iconOpenEye,
             isNotVisibleShowPassword: true,
+            value: emailLog,
+            onChange: handleChangeEmailLog,
         },
         {
             id: 7,
@@ -34,6 +48,8 @@ const LoginPage = () => {
             showPassword: iconOpenEye,
             notShowPassword: closeEye,
             isNotVisibleShowPassword: false,
+            value: passwordLog,
+            onChange: handleChangePasswordLog,
         }
     ])
 
@@ -45,13 +61,22 @@ const LoginPage = () => {
                     <>
                         <HeaderForm content={
                             <div className={style.iconForm}>
-                                <img className={style.iconFormBigAvatar} src={iconBigAvatar} alt='big-avatar'/>
+                                <img
+                                    className={style.iconFormBigAvatar}
+                                    src={iconBigAvatar}
+                                    alt='big-avatar'
+                                />
                             </div>
                         }
                         />
-                        <Form optionsInput={optionsLogInput} titleButton='Войти' bottomForm={<BottomForm/>}/>
+                        <Form
+                            optionsInput={optionsLogInput}
+                            titleButton='Войти'
+                            bottomForm={<BottomForm/>}
+                        />
                     </>
-                }/>
+                }
+            />
         </div>
     )
 }

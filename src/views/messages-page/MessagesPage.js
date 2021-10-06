@@ -2,12 +2,11 @@ import React from "react";
 import styles from './MessagesPage.module.css'
 import iconSettings from '../../image/icons/icon-gear.png'
 import iconUser from '../../image/usersPhoto/icon-user1.png'
-import Header from "../../components/header/Header";
-import MessageField from "../../components/messageField/MessageField";
-import MessageItemSearchPage from "../../components/messageItemSearchPage/MessageItemSearchPage";
-import MessageItemMessagesPage from "../../components/messageItemMessagesPage/MessageItemMessagesPage";
+import Header from "../../components/common/header/Header";
+import MessageField from "../../components/messagesPage/messageField/MessageField";
+import MessageItem from "../../components/messagesPage/messageItem/MessageItem";
 
-const MessagesPage = () => {
+const MessagesPage = ({message}) => {
 
     return (
         <>
@@ -19,12 +18,14 @@ const MessagesPage = () => {
                 />
                 <div className={styles.messageMainContainer}>
                     <ul className={styles.messageContainer}>
-                        <MessageItemMessagesPage/>
-                        <MessageItemMessagesPage/>
-                        <MessageItemMessagesPage/>
-                        <MessageItemMessagesPage/>
-                        <MessageItemMessagesPage/>
-                        <MessageItemMessagesPage/>
+                        {message.map((message) =>
+                            <MessageItem
+                                userName={message.userName}
+                                textMessage={message.textMessage}
+                                timeTitle={message.timeTitle}
+                                photoUser={message.photoUser}
+                            />
+                        )}
                     </ul>
 
                         <MessageField/>

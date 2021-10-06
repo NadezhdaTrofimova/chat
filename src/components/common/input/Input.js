@@ -19,15 +19,26 @@ const Input = ({optionsInput}) => {
                 <div className={`${styles.mainInputContainer} ${parameters.isNotVisibility && styles.isNotVisibility}`}
                      key={parameters.id}>
                     <div className={styles.iconBackground}>
-                        <img className={styles.icon} src={parameters.icon} alt='icon'/>
+                        <img
+                            className={styles.icon}
+                            src={parameters.icon}
+                            alt='icon'
+                        />
                     </div>
                     <div className={styles.inputContainer}>
-                        <input className={styles.input} placeholder={parameters.placeholder}
-                               type={isShowPassword ? 'text' : parameters.type}/>
+                        <input
+                            className={styles.input}
+                            placeholder={parameters.placeholder}
+                            type={isShowPassword ? 'text' : parameters.type}
+                            value={parameters.state}
+                            onChange={parameters.onChange}
+                        />
                         <img
                             className={`${styles.iconShowPassword} ${parameters.isNotVisibleShowPassword && styles.isNotVisibleShowPassword}`}
-                            src={isShowPassword ? parameters.notShowPassword : parameters.showPassword} alt='eye'
-                            onClick={handleShowPassword}/>
+                            src={isShowPassword ? parameters.notShowPassword : parameters.showPassword}
+                            alt='eye'
+                            onClick={handleShowPassword}
+                        />
                     </div>
                 </div>
             )}

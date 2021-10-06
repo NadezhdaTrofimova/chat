@@ -6,11 +6,37 @@ import iconLock from '../../image/icons/ico-lock.png'
 import iconOpenEye from '../../image/icons/icon-open-eye.png'
 import iconCloseEye from '../../image/icons/icon-close-eye.png'
 
-import ModalWindow from "../../components/modalWindow/ModalWindow";
-import HeaderForm from "../../components/headerForm/HeaderForm";
-import Form from "../../components/form/Form";
+import ModalWindow from "../../components/common/modalWindow/ModalWindow";
+import HeaderForm from "../../components/common/form/headerForm/HeaderForm";
+import Form from "../../components/common/form/Form";
 
 const RegistrationPage = () => {
+
+    const [nameUser, setNameUser] = React.useState('')
+    const [surnameUser, setSurnameUser] = React.useState('')
+    const [emailUser, setEmailUser] = React.useState('')
+    const [passwordUser, setPasswordUser] = React.useState('')
+    const [repeatPasswordUser, setRepeatPasswordUser] = React.useState('')
+
+    const handleChangeNameUser = (event) => {
+        setNameUser(event.target.value)
+    }
+
+    const handleChangSurnameUser = (event) => {
+        setSurnameUser(event.target.value)
+    }
+
+    const handleChangeEmailUser = (event) => {
+        setEmailUser(event.target.value)
+    }
+
+    const handleChangePasswordUser = (event) => {
+        setPasswordUser(event.target.value)
+    }
+    const handleChangeRepeatPasswordUser = (event) => {
+        setRepeatPasswordUser(event.target.value)
+    }
+
 
     const [optionsRegInput] = React.useState([
         {
@@ -21,6 +47,9 @@ const RegistrationPage = () => {
             isNotVisibility: false,
             showPassword: iconOpenEye,
             isNotVisibleShowPassword: true,
+            value: nameUser,
+            onChange: handleChangeNameUser
+
         },
         {
             id: 2,
@@ -30,6 +59,8 @@ const RegistrationPage = () => {
             isNotVisibility: false,
             showPassword: iconOpenEye,
             isNotVisibleShowPassword: true,
+            value: surnameUser,
+            onChange: handleChangSurnameUser
         },
         {
             id: 3,
@@ -39,6 +70,8 @@ const RegistrationPage = () => {
             isNotVisibility: false,
             showPassword: iconOpenEye,
             isNotVisibleShowPassword: true,
+            value: emailUser,
+            onChange: handleChangeEmailUser
         },
         {
             id: 4,
@@ -49,6 +82,8 @@ const RegistrationPage = () => {
             showPassword: iconOpenEye,
             notShowPassword:iconCloseEye,
             isNotVisibleShowPassword: false,
+            value: passwordUser,
+            onChange: handleChangePasswordUser
         },
         {
             id: 5,
@@ -59,6 +94,8 @@ const RegistrationPage = () => {
             showPassword: iconOpenEye,
             notShowPassword: iconCloseEye,
             isNotVisibleShowPassword: false,
+            value: repeatPasswordUser,
+            onChange: handleChangeRepeatPasswordUser
         }
     ])
 
@@ -68,7 +105,10 @@ const RegistrationPage = () => {
                 contentModal={
                     <>
                         <HeaderForm content='Регистрация'/>
-                        <Form optionsInput={optionsRegInput} titleButton='Зарегистрироваться'/>
+                        <Form
+                            optionsInput={optionsRegInput}
+                            titleButton='Зарегистрироваться'
+                        />
                     </>
                 }/>
         </div>

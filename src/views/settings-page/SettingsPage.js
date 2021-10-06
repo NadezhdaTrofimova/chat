@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "../../components/header/Header";
+import Header from "../../components/common/header/Header";
 import iconSave from '../../image/icons/icon-disc.png';
 import iconUser from '../../image/usersPhoto/icon-user2.png'
 import photoUser from '../../image/usersPhoto/photo-user2.png'

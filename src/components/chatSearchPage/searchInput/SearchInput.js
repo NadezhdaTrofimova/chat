@@ -1,13 +1,25 @@
 import React from 'react';
 import styles from './SearchInput.module.css'
-import iconButton from "../../image/icons/icon-magnifier.png";
+import iconButton from "../../../image/icons/icon-magnifier.png";
 
 const SearchInput = () => {
+
+    const [inputValue, setInputValue]  = React.useState('')
+
+    const handleOnChangeInput = (e) => {
+        setInputValue(e.target.value)
+    }
+
     return (
         <div className={styles.containerWrapper}>
             <div className={styles.container}>
                 <div className={styles.inputContainer}>
-                    <input className={styles.textInput} type="text" placeholder='Поиск чата'/>
+                    <input
+                        value={inputValue}
+                        onChange={handleOnChangeInput}
+                        className={styles.textInput}
+                        type="text"
+                        placeholder='Поиск чата'/>
                 </div>
                 <div className={styles.buttonContainer}>
                     <img src={iconButton} alt="button-icon" className={styles.buttonIcon}/>
