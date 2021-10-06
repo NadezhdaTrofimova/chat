@@ -8,6 +8,24 @@ import iconEdit from '../../image/icons/icon-pencil.png'
 
 const SettingsPage = () => {
 
+    const [name, setName] = React.useState('')
+    const [surname, setSurname] = React.useState('')
+    const [email, setEmail] = React.useState('')
+
+    const handleOnChangeName = (e) => {
+        setName(e.target.value)
+    }
+
+    const handleOnChangeSurname = (e) => {
+        setSurname(e.target.value)
+    }
+
+    const handleOnChangeEmail = (e) => {
+        setEmail(e.target.value)
+    }
+
+    console.log(email, surname, name)
+
     return (
         <>
             <div className={styles.settingsPage}>
@@ -29,6 +47,8 @@ const SettingsPage = () => {
                                 className={styles.input}
                                 type="text"
                                 placeholder="Имя"
+                                value={name}
+                                onChange={handleOnChangeName}
                             />
                             <img
                                 src={iconEdit}
@@ -41,6 +61,8 @@ const SettingsPage = () => {
                                 className={styles.input}
                                 type="text"
                                 placeholder="Фамилия"
+                                value={surname}
+                                onChange={handleOnChangeSurname}
                             />
                             <img
                                 src={iconEdit}
@@ -53,6 +75,8 @@ const SettingsPage = () => {
                                 className={styles.input}
                                 type="text"
                                 placeholder="E-mail"
+                                value={email}
+                                onChange={handleOnChangeEmail}
                             />
                             <img
                                 src={iconEdit}

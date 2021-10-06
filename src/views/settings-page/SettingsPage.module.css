@@ -60,6 +60,10 @@
     padding-left: 10px;
 }
 
+.input:focus {
+    outline: none;
+}
+
 
 .inputContainer {
     margin: 15px 0 0 15px;
