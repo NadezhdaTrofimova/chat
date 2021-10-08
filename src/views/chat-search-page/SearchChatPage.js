@@ -4,7 +4,6 @@ import styles from './SearchChatPage.module.css'
 
 import iconSettings from '../../image/icons/icon-gear.png'
 import iconUser from '../../image/usersPhoto/icon-user1.png'
-import photoUser from '../../image/usersPhoto/icon-user3.png'
 
 import Header from "../../components/common/header/Header";
 import SearchInput from "../../components/chatSearchPage/searchInput/SearchInput";
@@ -27,8 +26,9 @@ const SearchChatPage = ({message}) => {
             </div>
             <div className={styles.messageMainContainer}>
                 <ul className={styles.messageContainer}>
-                    {message.map((message) =>
+                    {message.map((message, index) =>
                         <LastMessage
+                            key={index}
                             userName={message.userName}
                             textMessage={message.textMessage}
                             timeTitle={message.timeTitle}

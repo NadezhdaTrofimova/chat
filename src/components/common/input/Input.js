@@ -6,11 +6,7 @@ const Input = ({optionsInput}) => {
     const [isShowPassword, setIsShowPassword] = React.useState(false)
 
     const handleShowPassword = () => {
-        if (isShowPassword === false) {
-            setIsShowPassword(true)
-        } else {
-            setIsShowPassword(false)
-        }
+        setIsShowPassword(!isShowPassword)
     }
 
     return (
@@ -32,6 +28,9 @@ const Input = ({optionsInput}) => {
                             type={isShowPassword ? 'text' : parameters.type}
                             value={parameters.state}
                             onChange={parameters.onChange}
+                            // onBlur={parameters.onBlur}
+                            // dirty={parameters.dirty}
+                            required
                         />
                         <img
                             className={`${styles.iconShowPassword} ${parameters.isNotVisibleShowPassword && styles.isNotVisibleShowPassword}`}

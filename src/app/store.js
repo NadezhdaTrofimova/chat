@@ -1,5 +1,6 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import { logger } from 'redux-logger';
+import usersDataReducer from '../slices/userSlice'
 
 import {
     persistStore,
@@ -14,10 +15,32 @@ import {
 
 import storage from 'redux-persist/lib/storage';
 
-import userSlice from "../slices/userSlice";
 
-export default configureStore({
-    reducer: {
-        user: userSlice
-    },
+const rootReducer = combineReducers({
+    usersData: usersDataReducer,
 })
+
+const persistConfig = {
+    key: 'root',
+    version: 1,
+    storage,
+}
+
+const persistedReducer = persistReducer(persistConfig, rootReducer);
+
+const store = configureStore({
+    reducer: persistedReducer,
+    middleware: (getDefaultMiddleware) =>
+        getDefaultMiddleware({
+            serializableCheck: {
+                ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+            },
+        }).concat(logger)
+})
+
+const persistor = persistStore(store);
+
+export {
+    persistor,
+    store
+}

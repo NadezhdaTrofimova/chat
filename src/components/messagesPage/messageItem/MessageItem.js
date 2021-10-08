@@ -9,7 +9,7 @@ const MessageItem = ({textMessage, timeTitle, photoUser}) => {
                     <div className={styles.avatarContainer}>
                         <img
                             className={styles.userAvatar}
-                            alt="photo-user"
+                            alt="avatar-user"
                             src={photoUser}
                         />
                     </div>
