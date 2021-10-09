@@ -24,12 +24,18 @@ export const userSlice = createSlice({
             state.currentUser.id = id
             state.currentUser.email = email
             state.currentUser.password = password
+        },
+        logOutUser: (state, action) => {
+            state.currentUser.id = ''
+            state.currentUser.email = ''
+            state.currentUser.password = ''
         }
     },
 })
 
 export const {
-    loggedInUser
+    loggedInUser,
+    logOutUser
 } = userSlice.actions;
 
 export default userSlice.reducer
