@@ -92,3 +92,7 @@
     height: 20px;
     cursor: pointer;
 }
+
+.unVisibleImageEdit {
+    display: none;
+}

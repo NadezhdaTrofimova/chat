@@ -1,5 +1,5 @@
 import React from 'react';
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {Link} from "react-router-dom"
 import {useHistory} from "react-router-dom";
 import styles from './Header.module.css'
@@ -7,10 +7,13 @@ import iconExit from '../../../image/icons/icon-open-door.png'
 
 import {logOutUser} from "../../../slices/userSlice";
 
-const Header = ({iconUser, iconVariable, title}) => {
+const Header = ({iconVariable, title, onClick}) => {
 
     const history = useHistory();
     const dispatch = useDispatch();
+
+    const users = useSelector((state) => state.usersData.users)
+    const currentUserId = useSelector((state) => state.usersData.currentUser.id)
 
     const handleLogOut = (e) => {
         e.preventDefault();
@@ -22,10 +25,10 @@ const Header = ({iconUser, iconVariable, title}) => {
         <div className={styles.headerWrapper}>
             <div className={styles.headerContainer}>
                 <div className={styles.userInfoContainer}>
-                    <img className={styles.userAvatar} src={iconUser} alt="user-icon"/>
-                    <p className={styles.userName}>Username</p>
+                    <img className={styles.userAvatar} src={users[currentUserId].avatar} alt="user-icon"/>
+                    <p className={styles.userName}>{users[currentUserId].name} {users[currentUserId].surname}</p>
                 </div>
-                <Link to='/settings' className={styles.settingsContainer}>
+                <Link to='/settings' className={styles.settingsContainer} onClick={onClick}>
                     <img className={styles.settingsImage} src={iconVariable} alt="settings-icon"/>
                     <p className={styles.settingsText}>{title}</p>
                 </Link>

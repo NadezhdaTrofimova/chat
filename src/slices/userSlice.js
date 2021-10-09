@@ -1,5 +1,6 @@
 import {createSlice} from '@reduxjs/toolkit'
-// import avatar0 from '../image/usersPhoto/icon-user0.png'
+import avatar0 from '../image/usersPhoto/photo-user0.png'
+import notIconUser from '../image/pictures/picture-not-avatar.png'
 
 export const userSlice = createSlice({
     name: 'usersData',
@@ -7,14 +8,22 @@ export const userSlice = createSlice({
         users: [
             {
                 id: 0,
-                name: 'Tim',
+                name: 'Oleg',
                 surname: 'Ivanov',
                 email: 'na@gmail.com',
                 password: '123',
-                // avatar: avatar0
+                avatar: avatar0
+            },
+            {
+                id: 1,
+                name: 'Lena',
+                surname: 'Petrova',
+                email: 'p@gmail.com',
+                password: '321',
+                avatar: notIconUser
             }
         ],
-        newId: 1,
+        newId: 2,
         currentUser: {
             id: '',
             email: '',
@@ -40,7 +49,8 @@ export const userSlice = createSlice({
                     name: action.payload.nameUser,
                     surname: action.payload.surnameUser,
                     email: action.payload.emailUser,
-                    password: action.payload.passwordUser
+                    password: action.payload.passwordUser,
+                    avatar: notIconUser,
                 }
             )
             state.currentUser.id = state.newId
@@ -49,11 +59,20 @@ export const userSlice = createSlice({
             state.newId += 1
         },
         recoverPassword: (state, action) => {
-                state.users = state.users.map(elem => elem.email === action.payload.emailRecover ? {
-                    ...elem,
-                    password: action.payload.passwordRecover
-                } : elem)
-        }
+            state.users = state.users.map(elem => elem.email === action.payload.emailRecover ? {
+                ...elem,
+                password: action.payload.passwordRecover
+            } : elem)
+        },
+        changeUserInfo: (state, action) => {
+            state.users = state.users.map(elem => elem.id === action.payload.currentUserId ? {
+                ...elem,
+                name: action.payload.name,
+                surname: action.payload.surname,
+                email: action.payload.email
+            } : elem)
+            state.currentUser.email = action.payload.email
+        },
     },
 })
 
@@ -61,7 +80,8 @@ export const {
     loggedInUser,
     logOutUser,
     addUser,
-    recoverPassword
+    recoverPassword,
+    changeUserInfo
 } = userSlice.actions;
 
 export default userSlice.reducer

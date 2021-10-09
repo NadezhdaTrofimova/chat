@@ -7,6 +7,7 @@ import iconLetter from '../../image/icons/icon-letter.png'
 import iconLock from '../../image/icons/ico-lock.png'
 import iconOpenEye from '../../image/icons/icon-open-eye.png'
 import iconCloseEye from '../../image/icons/icon-close-eye.png'
+import notIconUser from '../../image/pictures/picture-not-avatar.png'
 
 import ModalWindow from "../../components/common/modalWindow/ModalWindow";
 import HeaderForm from "../../components/common/form/headerForm/HeaderForm";
@@ -68,8 +69,9 @@ const RegistrationPage = () => {
         else if (passwordUser !== repeatPasswordUser)
             alert("Введенные пароли не совпадают!")
         else {
-            dispatch(addUser({nameUser, surnameUser, emailUser, passwordUser}))
+            dispatch(addUser({nameUser, surnameUser, emailUser, passwordUser, notIconUser}))
             history.push('chats')
+            console.log(notIconUser)
         }
     }
 
