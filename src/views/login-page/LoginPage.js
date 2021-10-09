@@ -37,13 +37,16 @@ const LoginPage = () => {
 
     const handleFormLoginSubmit = (e) => {
         e.preventDefault();
+        let flag = false;
         for (let i = 0; i < users.length; i++) {
             if (emailLog === users[i].email && passwordLog === users[i].password) {
                 dispatch(loggedInUser(users[i]))
                 history.push('chats')
-            } else {
-                alert('Неверный e-mail или пароль')
+                flag = true;
             }
+        }
+        if (flag === false) {
+            alert ('Неверный email или пароль!')
         }
     }
 

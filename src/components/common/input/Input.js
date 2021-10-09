@@ -28,8 +28,6 @@ const Input = ({optionsInput}) => {
                             type={isShowPassword ? 'text' : parameters.type}
                             value={parameters.state}
                             onChange={parameters.onChange}
-                            // onBlur={parameters.onBlur}
-                            // dirty={parameters.dirty}
                             required
                         />
                         <img
