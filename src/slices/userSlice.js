@@ -48,13 +48,20 @@ export const userSlice = createSlice({
             state.currentUser.password = action.payload.passwordUser
             state.newId += 1
         },
+        recoverPassword: (state, action) => {
+                state.users = state.users.map(elem => elem.email === action.payload.emailRecover ? {
+                    ...elem,
+                    password: action.payload.passwordRecover
+                } : elem)
+        }
     },
 })
 
 export const {
     loggedInUser,
     logOutUser,
-    addUser
+    addUser,
+    recoverPassword
 } = userSlice.actions;
 
 export default userSlice.reducer
