@@ -51,6 +51,7 @@
     flex-direction: column;
     margin-top: 100px;
 }
+
 .input {
     border: 1px solid #BABABA;
     height: 45px;
@@ -95,4 +96,18 @@
 
 .unVisibleImageEdit {
     display: none;
+}
+
+.buttonContainer {
+    display: flex;
+}
+
+.buttonCross {
+    width: 45px;
+    height: 45px;
+    background: no-repeat url(../../image/icons/icon-cross.png);
+    border: none;
+    padding: 10px;
+    margin: 20px 10px;
+    cursor: pointer;
 }

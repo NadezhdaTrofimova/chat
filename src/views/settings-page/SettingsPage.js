@@ -55,6 +55,14 @@ const SettingsPage = () => {
         }
     }
 
+    const handleCancelChanges = (e) => {
+        e.preventDefault();
+        setName(users[currentUserId].name)
+        setSurname(users[currentUserId].surname)
+        setEmail(users[currentUserId].email)
+        setEdit(!edit)
+    }
+
     return (
         <>
             <div className={styles.settingsPage}>
@@ -122,17 +130,24 @@ const SettingsPage = () => {
 
                         {
                             (edit) ?
-                                <button
-                                    className={styles.button}
-                                    onClick={handleSaveChangeButton}>
-                                    Сохранить изменения
-                                </button>
+                                <div className={styles.buttonContainer}>
+                                    <button
+                                        className={styles.button}
+                                        onClick={handleSaveChangeButton}>
+                                        Сохранить изменения
+                                    </button>
+                                    <button
+                                        className={styles.buttonCross}
+                                        onClick={handleCancelChanges}
+                                    />
+                                </div>
                                 :
                                 <button
                                     className={styles.button}
                                     onClick={handleClickButton}>
                                     Редактировать
                                 </button>
+
                         }
 
                     </form>
