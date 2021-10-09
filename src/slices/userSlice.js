@@ -14,6 +14,7 @@ export const userSlice = createSlice({
                 // avatar: avatar0
             }
         ],
+        newId: 1,
         currentUser: {
             id: '',
             email: '',
@@ -33,18 +34,20 @@ export const userSlice = createSlice({
             state.currentUser.password = ''
         },
         addUser: (state, action) => {
-            // const {name, surname, email, password} = action.payload
-            // state.users.push(action.payload)
             state.users.push(
                 {
-                    id: state.users.length,
+                    id: state.newId,
                     name: action.payload.nameUser,
                     surname: action.payload.surnameUser,
                     email: action.payload.emailUser,
                     password: action.payload.passwordUser
                 }
             )
-        }
+            state.currentUser.id = state.newId
+            state.currentUser.email = action.payload.emailUser
+            state.currentUser.password = action.payload.passwordUser
+            state.newId += 1
+        },
     },
 })
 

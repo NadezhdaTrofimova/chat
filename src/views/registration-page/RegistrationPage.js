@@ -20,6 +20,8 @@ const RegistrationPage = () => {
     const dispatch = useDispatch();
     const history = useHistory();
 
+    const users = useSelector((state) => state.usersData.users)
+
     const [nameUser, setNameUser] = React.useState('')
     const [surnameUser, setSurnameUser] = React.useState('')
     const [emailUser, setEmailUser] = React.useState('')
@@ -47,9 +49,21 @@ const RegistrationPage = () => {
     }
 
 
+    const checkRepeatedUser = (email) => {
+        let flag = false;
+        for (let i = 0; i < users.length; i++) {
+            if (email === users[i].email)
+            flag = true
+        }
+        return flag
+    }
+
+
     const handleAddUser = (event) => {
         event.preventDefault();
-        if (passwordUser.length < 3)
+        if (checkRepeatedUser(emailUser))
+            alert('Пользователь с данным e-mail уже зарегистрирован!')
+        else if (passwordUser.length < 3)
             alert("Пароль слишком короткий!")
         else if (passwordUser !== repeatPasswordUser)
             alert("Введенные пароли не совпадают!")
