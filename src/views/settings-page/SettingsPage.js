@@ -1,5 +1,6 @@
 import React from "react";
 import {useDispatch, useSelector} from "react-redux";
+import {useHistory} from "react-router-dom";
 
 import Header from "../../components/common/header/Header";
 
@@ -7,13 +8,16 @@ import iconSave from '../../image/icons/icon-disc.png';
 import styles from './SettingsPage.module.css'
 import iconEdit from '../../image/icons/icon-gear.png'
 import iconEditInput from '../../image/icons/icon-pencil.png'
+import iconBack from '../../image/icons/icon-back.png'
 
 import {changeUserInfo} from "../../slices/userSlice";
+
 
 
 const SettingsPage = () => {
 
     const dispatch = useDispatch();
+    const history = useHistory();
 
     const users = useSelector((state) => state.usersData.users)
     const currentUserId = useSelector((state) => state.usersData.currentUser.id)
@@ -63,15 +67,27 @@ const SettingsPage = () => {
         setEdit(!edit)
     }
 
+    const handleReturnToChat = (e) => {
+        e.preventDefault();
+        history.push('chats')
+    }
+
     return (
         <>
             <div className={styles.settingsPage}>
                 <div className={styles.headerContainer}>
-                    <Header
-                        iconVariable={`${edit ? iconSave : iconEdit}`}
-                        title={`${edit ? 'Сохранить' : 'Редактировать'}`}
-                        onClick={handleSaveChangeButton}
-                    />
+                    {edit ?
+                        <Header
+                            iconVariable={iconSave}
+                            title='Сохранить'
+                            onClick={handleSaveChangeButton}
+                        /> :
+                        <Header
+                            iconVariable={iconBack}
+                            title='Вернуться на страницу чатов'
+                            onClick={handleReturnToChat}
+                        />
+                    }
                 </div>
                 <section className={styles.mainContainer}>
                     <div className={styles.photoContainer}>
@@ -147,9 +163,7 @@ const SettingsPage = () => {
                                     onClick={handleClickButton}>
                                     Редактировать
                                 </button>
-
                         }
-
                     </form>
                 </section>
             </div>
