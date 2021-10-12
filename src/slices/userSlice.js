@@ -1,6 +1,8 @@
 import {createSlice} from '@reduxjs/toolkit'
 import avatar0 from '../image/usersPhoto/photo-user0.png'
-import notIconUser from '../image/pictures/picture-not-avatar.png'
+import notIconUser from '../image/pictures/no-avatar.jpg'
+import avatar2 from '../image/usersPhoto/photo-user2.jpg'
+import avatar3 from '../image/usersPhoto/icon-user0.png'
 
 export const userSlice = createSlice({
     name: 'usersData',
@@ -21,7 +23,23 @@ export const userSlice = createSlice({
                 email: 'p@gmail.com',
                 password: '321',
                 avatar: notIconUser
-            }
+            },
+            {
+                id: 2,
+                name: 'Johny',
+                surname: 'Depp',
+                email: 'depp@mail.ru',
+                password: 'depp',
+                avatar: avatar2
+            },
+            {
+                id: 3,
+                name: 'igor',
+                surname: 'XXX',
+                email: 'igor@mail.ru',
+                password: '456',
+                avatar: avatar3
+            },
         ],
         newId: 2,
         currentUser: {

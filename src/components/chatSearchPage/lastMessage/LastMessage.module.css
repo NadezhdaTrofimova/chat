@@ -22,6 +22,7 @@
 }
 
 .userAvatar {
+    border-radius: 50%;
     grid-area: 1;
     /*grid-area: 1 / 2;*/
     width: 45px;

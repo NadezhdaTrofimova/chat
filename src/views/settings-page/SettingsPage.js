@@ -6,7 +6,6 @@ import Header from "../../components/common/header/Header";
 
 import iconSave from '../../image/icons/icon-disc.png';
 import styles from './SettingsPage.module.css'
-import iconEdit from '../../image/icons/icon-gear.png'
 import iconEditInput from '../../image/icons/icon-pencil.png'
 import iconBack from '../../image/icons/icon-back.png'
 

@@ -1,6 +1,7 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import { logger } from 'redux-logger';
 import usersDataReducer from '../slices/userSlice'
+import chatsReducer from '../slices/chatSlice'
 
 import {
     persistStore,
@@ -18,6 +19,7 @@ import storage from 'redux-persist/lib/storage';
 
 const rootReducer = combineReducers({
     usersData: usersDataReducer,
+    chats: chatsReducer,
 })
 
 const persistConfig = {

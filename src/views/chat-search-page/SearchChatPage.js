@@ -1,5 +1,6 @@
 import React from "react";
 import {useSelector} from "react-redux";
+import {useHistory} from "react-router-dom";
 
 import styles from './SearchChatPage.module.css'
 
@@ -12,14 +13,23 @@ import LastMessage from "../../components/chatSearchPage/lastMessage/LastMessage
 
 
 
+const SearchChatPage = () => {
 
-const SearchChatPage = ({message}) => {
+    const history = useHistory();
 
-    // const users = useSelector((state) => state.usersData.users)
-    // const currentUser = useSelector((state) => state.usersData.currentUser.id)
-    // const iconUser = users[currentUser]
-    //
-    // console.log(iconUser)
+    const chats = useSelector((state) => state.chats.chatsTitle)
+    const messages = useSelector((state) => state.chats.messages)
+    const users = useSelector((state) => state.usersData.users)
+
+
+    const getLastElem = (id) => {
+        const arr = messages.filter(elem => elem.chat === id)
+        return arr[arr.length - 1]
+    }
+
+const handleCreateChat = () => {
+        history.push('messages')
+}
 
     return (
         <div className={styles.searchChatPage}>
@@ -33,18 +43,20 @@ const SearchChatPage = ({message}) => {
             </div>
             <div className={styles.messageMainContainer}>
                 <ul className={styles.messageContainer}>
-                    {message.map((message, index) =>
+                    {chats.map((chat) =>
                         <LastMessage
-                            key={index}
-                            userName={message.userName}
-                            textMessage={message.textMessage}
-                            timeTitle={message.timeTitle}
-                            photoUser={message.photoUser}
+                            key={chat.id}
+                            chatsTitle={chat.title}
+                            textMessage={getLastElem(chat.id).text}
+                            timeTitle={getLastElem(chat.id).time}
+                            photoUser={users[getLastElem(chat.id).author].avatar}
                         />
                     )}
                 </ul>
                 <div className={styles.buttonContainer}>
-                    <p className={styles.buttonTitle}>Создать чат</p>
+                    <p
+                        onClick={handleCreateChat}
+                        className={styles.buttonTitle}>Создать чат</p>
                 </div>
             </div>
         </div>

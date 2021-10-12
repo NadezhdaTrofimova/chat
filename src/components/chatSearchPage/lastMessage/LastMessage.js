@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './LastMessage.module.css'
 
 
-const LastMessage = ({userName, textMessage, timeTitle, photoUser}) => {
+const LastMessage = ({chatsTitle, textMessage, timeTitle, photoUser}) => {
     return (
         <>
             <li>
@@ -14,7 +14,7 @@ const LastMessage = ({userName, textMessage, timeTitle, photoUser}) => {
                             src={photoUser}
                         />
                     </div>
-                    <p className={styles.name}>{userName}</p>
+                    <p className={styles.name}>{chatsTitle}</p>
                     <span className={styles.timeTitle}>{timeTitle}</span>
                     <div className={styles.containerMessage}>
                         <p className={styles.messageText}>{textMessage}</p>
