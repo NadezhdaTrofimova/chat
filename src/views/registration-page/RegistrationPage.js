@@ -54,7 +54,7 @@ const RegistrationPage = () => {
         let flag = false;
         for (let i = 0; i < users.length; i++) {
             if (email === users[i].email)
-            flag = true
+                flag = true
         }
         return flag
     }
@@ -71,7 +71,6 @@ const RegistrationPage = () => {
         else {
             dispatch(addUser({nameUser, surnameUser, emailUser, passwordUser, notIconUser}))
             history.push('chats')
-            console.log(notIconUser)
         }
     }
 
@@ -149,7 +148,8 @@ const RegistrationPage = () => {
                             onSubmit={handleAddUser}
                         />
                     </>
-                }/>
+                }
+            />
         </div>
     )
 }

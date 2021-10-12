@@ -1,11 +1,27 @@
-import React from 'react';
+import React from 'react'
+import {useDispatch, useSelector} from "react-redux";
+
 import styles from './LastMessage.module.css'
 
+import {directToCurrentChat} from "../../../slices/chatSlice";
+import {useHistory} from "react-router-dom";
 
-const LastMessage = ({chatsTitle, textMessage, timeTitle, photoUser}) => {
+const LastMessage = ({chatsTitle, textMessage, timeTitle, photoUser, id}) => {
+
+    const dispatch = useDispatch();
+    const history = useHistory();
+
+    const chats = useSelector((state) => state.chats.chatsTitle)
+
+    const handleRedirectToChat = (e) => {
+        dispatch(directToCurrentChat(parseInt(e.currentTarget.id)))
+        history.push('messages')
+    }
+
+
     return (
         <>
-            <li>
+            <li onClick={handleRedirectToChat} id={id}>
                 <div className={styles.itemContainer}>
                     <div className={styles.avatarContainer}>
                         <img

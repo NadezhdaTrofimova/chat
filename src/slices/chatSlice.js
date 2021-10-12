@@ -1,4 +1,5 @@
 import {createSlice} from "@reduxjs/toolkit";
+import notIconUser from "../image/pictures/no-avatar.jpg";
 
 
 export const userSlice = createSlice({
@@ -121,52 +122,29 @@ export const userSlice = createSlice({
                 time: '13:47'
             },
         ],
+        newMessageId: 11,
     },
-    reducers: {},
+    reducers: {
+        directToCurrentChat: (state, action) => {
+            state.currentChat = action.payload
+        },
+        addMessage: (state, action) => {
+            state.messages.push(
+                {
+                    chat: action.payload.currentChat,
+                    author: action.payload.currentUser,
+                    text: action.payload.textAreaValue,
+                }
+            )
+            state.newMessageId += 1
+        },
+    },
 })
-// loggedInUser: (state, action) => {
-//     const {id, email, password} = action.payload
-//     state.currentUser.id = id
-//     state.currentUser.email = email
-//     state.currentUser.password = password
-// },
-// logOutUser: (state) => {
-//     state.currentUser.id = ''
-//     state.currentUser.email = ''
-//     state.currentUser.password = ''
-// },
-// addUser: (state, action) => {
-//     state.users.push(
-//         {
-//             id: state.newId,
-//             name: action.payload.nameUser,
-//             surname: action.payload.surnameUser,
-//             email: action.payload.emailUser,
-//             password: action.payload.passwordUser,
-//             avatar: notIconUser,
-//         }
-//     )
-//     state.currentUser.id = state.newId
-//     state.currentUser.email = action.payload.emailUser
-//     state.currentUser.password = action.payload.passwordUser
-//     state.newId += 1
-// },
-// recoverPassword: (state, action) => {
-//     state.users = state.users.map(elem => elem.email === action.payload.emailRecover ? {
-//         ...elem,
-//         password: action.payload.passwordRecover
-//     } : elem)
-// },
-// changeUserInfo: (state, action) => {
-//     state.users = state.users.map(elem => elem.id === action.payload.currentUserId ? {
-//         ...elem,
-//         name: action.payload.name,
-//         surname: action.payload.surname,
-//         email: action.payload.email
-//     } : elem)
-//     state.currentUser.email = action.payload.email
 
 
-export const {} = userSlice.actions;
+export const {
+    directToCurrentChat,
+    addMessage,
+} = userSlice.actions;
 
 export default userSlice.reducer

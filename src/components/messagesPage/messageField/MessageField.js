@@ -1,16 +1,12 @@
 import React from 'react';
+import {useDispatch} from "react-redux";
 import styles from './MessageField.module.css'
 import iconEmoji from "../../../image/icons/icon-emoji.png";
 import iconAttach from "../../../image/icons/icon-clip.png";
 import iconSendMessage from "../../../image/icons/icon-paper-plane.png";
 
-const MessageField = () => {
+const MessageField = ({handleOnChangeTextArea, textAreaValue, handleSendMessages}) => {
 
-    const [textAreaValue, setTextAreaValue] = React.useState('')
-
-    const handleOnChangeTextArea = (e) => {
-        setTextAreaValue(e.target.value)
-    }
 
 
     return (
@@ -22,6 +18,7 @@ const MessageField = () => {
                         onChange={handleOnChangeTextArea}
                         className={styles.textInput}
                         placeholder='Введите Ваше сообщение'
+
                     />
                 </div>
                 <div className={styles.buttonContainer}>
@@ -40,6 +37,7 @@ const MessageField = () => {
                             className={styles.icon}
                             src={iconSendMessage}
                             alt="paper-plane-icon"
+                            onClick={handleSendMessages}
                         />
                     </div>
                 </div>

@@ -41,7 +41,7 @@ export const userSlice = createSlice({
                 avatar: avatar3
             },
         ],
-        newId: 2,
+        newId: 4,
         currentUser: {
             id: '',
             email: '',

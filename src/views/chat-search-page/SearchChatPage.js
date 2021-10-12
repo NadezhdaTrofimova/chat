@@ -1,5 +1,5 @@
 import React from "react";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {useHistory} from "react-router-dom";
 
 import styles from './SearchChatPage.module.css'
@@ -12,10 +12,10 @@ import SearchInput from "../../components/chatSearchPage/searchInput/SearchInput
 import LastMessage from "../../components/chatSearchPage/lastMessage/LastMessage";
 
 
-
 const SearchChatPage = () => {
 
     const history = useHistory();
+
 
     const chats = useSelector((state) => state.chats.chatsTitle)
     const messages = useSelector((state) => state.chats.messages)
@@ -23,13 +23,13 @@ const SearchChatPage = () => {
 
 
     const getLastElem = (id) => {
-        const arr = messages.filter(elem => elem.chat === id)
-        return arr[arr.length - 1]
+        return messages.filter(elem => elem.chat === id).pop()
     }
 
-const handleCreateChat = () => {
+    const handleCreateChat = () => {
         history.push('messages')
-}
+    }
+
 
     return (
         <div className={styles.searchChatPage}>
@@ -45,6 +45,7 @@ const handleCreateChat = () => {
                 <ul className={styles.messageContainer}>
                     {chats.map((chat) =>
                         <LastMessage
+                            id={chat.id}
                             key={chat.id}
                             chatsTitle={chat.title}
                             textMessage={getLastElem(chat.id).text}
