@@ -1,5 +1,4 @@
 import {createSlice} from "@reduxjs/toolkit";
-import notIconUser from "../image/pictures/no-avatar.jpg";
 
 
 export const userSlice = createSlice({

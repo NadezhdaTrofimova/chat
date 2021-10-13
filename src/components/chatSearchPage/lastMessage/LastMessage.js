@@ -1,5 +1,5 @@
 import React from 'react'
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 
 import styles from './LastMessage.module.css'
 
@@ -11,7 +11,6 @@ const LastMessage = ({chatsTitle, textMessage, timeTitle, photoUser, id}) => {
     const dispatch = useDispatch();
     const history = useHistory();
 
-    const chats = useSelector((state) => state.chats.chatsTitle)
 
     const handleRedirectToChat = (e) => {
         dispatch(directToCurrentChat(parseInt(e.currentTarget.id)))

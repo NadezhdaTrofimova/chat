@@ -1,5 +1,4 @@
 import React from 'react';
-import {useDispatch} from "react-redux";
 import styles from './MessageField.module.css'
 import iconEmoji from "../../../image/icons/icon-emoji.png";
 import iconAttach from "../../../image/icons/icon-clip.png";

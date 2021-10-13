@@ -95,7 +95,7 @@ const LoginPage = () => {
                         <Form
                             optionsInput={optionsLogInput}
                             titleButton='Войти'
-                            bottomForm={<BottomForm/>}
+                            bottom={<BottomForm/>}
                             onSubmit={handleFormLoginSubmit}
                         />
                     </>

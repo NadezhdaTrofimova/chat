@@ -90,8 +90,8 @@ const SettingsPage = () => {
                 </div>
                 <section className={styles.mainContainer}>
                     <div className={styles.photoContainer}>
-                        <img className={styles.userPhoto} src={users[currentUserId].avatar} alt="user-photo"/>
-                        <a className={styles.changePhotoTitle}>Изменить фото</a>
+                        <img className={styles.userPhoto} src={users[currentUserId].avatar} alt="user-avatar"/>
+                        <span className={styles.changePhotoTitle}>Изменить фото</span>
                     </div>
                     <form className={styles.formContainer}>
                         <div className={styles.inputContainer}>
