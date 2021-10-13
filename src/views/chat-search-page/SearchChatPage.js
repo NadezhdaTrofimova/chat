@@ -2,16 +2,14 @@ import React from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {useHistory} from "react-router-dom";
 
-import styles from './SearchChatPage.module.css'
-
-import iconSettings from '../../image/icons/icon-gear.png'
-import iconUser from '../../image/usersPhoto/icon-user0.png'
-
 import Header from "../../components/common/header/Header";
 import SearchInput from "../../components/chatSearchPage/searchInput/SearchInput";
 import LastMessage from "../../components/chatSearchPage/lastMessage/LastMessage";
-
 import {addChat} from "../../slices/chatSlice";
+import iconSettings from '../../image/icons/icon-gear.png'
+import iconUser from '../../image/usersPhoto/photo-user3.png'
+
+import styles from './SearchChatPage.module.css'
 
 const SearchChatPage = () => {
 

@@ -1,10 +1,12 @@
 import React from "react";
-import styles from './Form.module.css'
+
 import Input from "../input/Input";
 import Button from "../button/Button";
 
-const Form = ({optionsInput, titleButton, bottom, onSubmit}) => {
+import styles from './Form.module.css'
 
+
+const Form = ({optionsInput, titleButton, bottom, onSubmit}) => {
 
 
     return (

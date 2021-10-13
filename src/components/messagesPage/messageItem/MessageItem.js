@@ -1,8 +1,9 @@
 import React from 'react';
-import styles from './MessageItem.module.css'
+
+import styles from './MessageItem.module.css';
+
 
 const MessageItem = ({textMessage, timeTitle, photoUser, isMyAccount}) => {
-
 
     return (
         <>

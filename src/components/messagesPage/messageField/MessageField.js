@@ -1,12 +1,12 @@
 import React from 'react';
-import styles from './MessageField.module.css'
+
 import iconEmoji from "../../../image/icons/icon-emoji.png";
 import iconAttach from "../../../image/icons/icon-clip.png";
 import iconSendMessage from "../../../image/icons/icon-paper-plane.png";
 
+import styles from './MessageField.module.css'
+
 const MessageField = ({handleOnChangeTextArea, textAreaValue, handleSendMessages}) => {
-
-
 
     return (
         <div className={styles.containerWrapper}>

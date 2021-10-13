@@ -2,19 +2,16 @@ import React from "react";
 import {useSelector, useDispatch} from "react-redux";
 import {useHistory} from "react-router-dom";
 
+import ModalWindow from "../../components/common/modalWindow/ModalWindow";
+import HeaderForm from "../../components/common/form/headerForm/HeaderForm";
+import Form from "../../components/common/form/Form";
+import {addUser} from "../../slices/userSlice"
 import iconAvatar from '../../image/icons/icon-man.png'
 import iconLetter from '../../image/icons/icon-letter.png'
 import iconLock from '../../image/icons/ico-lock.png'
 import iconOpenEye from '../../image/icons/icon-open-eye.png'
 import iconCloseEye from '../../image/icons/icon-close-eye.png'
 import notIconUser from '../../image/pictures/picture-not-avatar.png'
-
-import ModalWindow from "../../components/common/modalWindow/ModalWindow";
-import HeaderForm from "../../components/common/form/headerForm/HeaderForm";
-import Form from "../../components/common/form/Form";
-
-import {addUser} from "../../slices/userSlice"
-
 
 const RegistrationPage = () => {
 

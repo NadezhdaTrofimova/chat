@@ -1,11 +1,12 @@
 import React from 'react';
 import {useDispatch, useSelector} from "react-redux";
-import {Link} from "react-router-dom"
 import {useHistory} from "react-router-dom";
-import styles from './Header.module.css'
+
+import {Link} from "react-router-dom"
+import {logOutUser} from "../../../slices/userSlice";
 import iconExit from '../../../image/icons/icon-open-door.png'
 
-import {logOutUser} from "../../../slices/userSlice";
+import styles from './Header.module.css'
 
 const Header = ({iconVariable, title, onClick}) => {
 
@@ -37,7 +38,6 @@ const Header = ({iconVariable, title, onClick}) => {
                 <p className={styles.exitTitle}>Выйти</p>
                 <img className={styles.exitImage} src={iconExit} alt="exit-icon"/>
             </div>
-
         </div>
     );
 };

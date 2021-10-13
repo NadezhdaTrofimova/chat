@@ -1,10 +1,11 @@
 import React from 'react'
 import {useDispatch} from "react-redux";
+import {useHistory} from "react-router-dom";
+
+import {directToCurrentChat} from "../../../slices/chatSlice";
 
 import styles from './LastMessage.module.css'
 
-import {directToCurrentChat} from "../../../slices/chatSlice";
-import {useHistory} from "react-router-dom";
 
 const LastMessage = ({chatsTitle, textMessage, timeTitle, photoUser, id}) => {
 
@@ -16,7 +17,6 @@ const LastMessage = ({chatsTitle, textMessage, timeTitle, photoUser, id}) => {
         dispatch(directToCurrentChat(parseInt(e.currentTarget.id)))
         history.push('messages')
     }
-
 
     return (
         <>

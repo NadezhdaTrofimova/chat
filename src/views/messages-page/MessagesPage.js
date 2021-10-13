@@ -1,12 +1,14 @@
 import React from "react";
-import styles from './MessagesPage.module.css'
-import iconSettings from '../../image/icons/icon-gear.png'
-import iconUser from '../../image/usersPhoto/icon-user0.png'
+import {useDispatch, useSelector} from "react-redux";
+
 import Header from "../../components/common/header/Header";
 import MessageField from "../../components/messagesPage/messageField/MessageField";
 import MessageItem from "../../components/messagesPage/messageItem/MessageItem";
-import {useDispatch, useSelector} from "react-redux";
 import {addMessage} from "../../slices/chatSlice";
+import iconSettings from '../../image/icons/icon-gear.png'
+import iconUser from '../../image/usersPhoto/photo-user3.png'
+
+import styles from './MessagesPage.module.css'
 
 const MessagesPage = () => {
 

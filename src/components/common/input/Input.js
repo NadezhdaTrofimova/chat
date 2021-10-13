@@ -1,9 +1,10 @@
 import React from "react";
-import styles from './Input.module.css'
+
+import styles from './Input.module.css';
 
 const Input = ({optionsInput}) => {
 
-    const [isShowPassword, setIsShowPassword] = React.useState(false)
+    const [isShowPassword, setIsShowPassword] = React.useState(false);
 
     const handleShowPassword = () => {
         setIsShowPassword(!isShowPassword)

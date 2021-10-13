@@ -2,6 +2,11 @@ import React from "react";
 import {useSelector, useDispatch} from "react-redux";
 import {useHistory} from "react-router-dom";
 
+import BottomForm from "../../components/common/form/bottomForm/BottomForm";
+import ModalWindow from "../../components/common/modalWindow/ModalWindow";
+import Form from "../../components/common/form/Form";
+import HeaderForm from "../../components/common/form/headerForm/HeaderForm";
+import {loggedInUser} from "../../slices/userSlice";
 import iconOpenEye from "../../image/icons/icon-open-eye.png";
 import iconLetter from "../../image/icons/icon-letter.png";
 import iconLock from "../../image/icons/ico-lock.png";
@@ -9,12 +14,6 @@ import closeEye from "../../image/icons/icon-close-eye.png";
 import iconBigAvatar from '../../image/pictures/picture-not-avatar.png'
 
 import style from '../../components/common/form/headerForm/HeaderForm.module.css'
-
-import BottomForm from "../../components/common/form/bottomForm/BottomForm";
-import ModalWindow from "../../components/common/modalWindow/ModalWindow";
-import Form from "../../components/common/form/Form";
-import HeaderForm from "../../components/common/form/headerForm/HeaderForm";
-import {loggedInUser} from "../../slices/userSlice";
 
 const LoginPage = () => {
 

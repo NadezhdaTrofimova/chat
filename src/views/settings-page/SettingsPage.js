@@ -3,15 +3,12 @@ import {useDispatch, useSelector} from "react-redux";
 import {useHistory} from "react-router-dom";
 
 import Header from "../../components/common/header/Header";
-
+import {changeUserInfo} from "../../slices/userSlice";
 import iconSave from '../../image/icons/icon-disc.png';
-import styles from './SettingsPage.module.css'
 import iconEditInput from '../../image/icons/icon-pencil.png'
 import iconBack from '../../image/icons/icon-back.png'
 
-import {changeUserInfo} from "../../slices/userSlice";
-
-
+import styles from './SettingsPage.module.css'
 
 const SettingsPage = () => {
 
