@@ -1,0 +1,14 @@
+.button {
+    font-family: Montserrat, sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    margin: 15px 0 0 15px;
+    height: 45px;
+    width:  200px;
+    border-radius: 5px;
+    background: linear-gradient(206.57deg, #6476F4 0%, #3246D3 83.33%);
+    border: none;
+    color: #ffffff;
+    padding: 0 15px;
+    cursor: pointer;
+}

@@ -72,7 +72,7 @@ const RegistrationPage = () => {
     }
 
 
-    const [optionsRegInput] = React.useState([
+    const optionsRegInput = [
         {
             id: 1,
             placeholder: 'Имя',
@@ -130,7 +130,7 @@ const RegistrationPage = () => {
             value: repeatPasswordUser,
             onChange: handleChangeRepeatPasswordUser
         }
-    ])
+    ]
 
 
     return (

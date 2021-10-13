@@ -5,10 +5,11 @@ import {useHistory} from "react-router-dom";
 import Header from "../../components/common/header/Header";
 import {changeUserInfo} from "../../slices/userSlice";
 import iconSave from '../../image/icons/icon-disc.png';
-import iconEditInput from '../../image/icons/icon-pencil.png'
 import iconBack from '../../image/icons/icon-back.png'
 
 import styles from './SettingsPage.module.css'
+import InputSettings from "../../components/settingspage/inputSettings/InputSettings";
+import ButtonSettings from "../../components/settingspage/buttonSettings/ButtonSettings";
 
 const SettingsPage = () => {
 
@@ -91,74 +92,45 @@ const SettingsPage = () => {
                         <span className={styles.changePhotoTitle}>Изменить фото</span>
                     </div>
                     <form className={styles.formContainer}>
-                        <div className={styles.inputContainer}>
-                            <input
-                                className={styles.input}
-                                type="text"
-                                placeholder={users[currentUserId].name}
-                                value={name}
-                                onChange={handleOnChangeName}
-                                disabled={!edit}
-                                required
-                            />
-                            <img
-                                src={iconEditInput}
-                                alt="icon-edit"
-                                className={`${edit ? styles.imageEdit : styles.unVisibleImageEdit}`}
-                            />
-                        </div>
-                        <div className={styles.inputContainer}>
-                            <input
-                                className={styles.input}
-                                type="text"
-                                placeholder={users[currentUserId].surname}
-                                value={surname}
-                                onChange={handleOnChangeSurname}
-                                disabled={!edit}
-                                required
-                            />
-                            <img
-                                src={iconEditInput}
-                                alt="icon-edit"
-                                className={`${edit ? styles.imageEdit : styles.unVisibleImageEdit}`}
-                            />
-                        </div>
-                        <div className={styles.inputContainer}>
-                            <input
-                                className={styles.input}
-                                type="email"
-                                placeholder={users[currentUserId].email}
-                                value={email}
-                                onChange={handleOnChangeEmail}
-                                disabled={!edit}
-                                required
-                            />
-                            <img
-                                src={iconEditInput}
-                                alt="icon-edit"
-                                className={`${edit ? styles.imageEdit : styles.unVisibleImageEdit}`}
-                            />
-                        </div>
-
+                        <InputSettings
+                            value={name}
+                            placeholder={users[currentUserId].name}
+                            onChange={handleOnChangeName}
+                            edit={edit}
+                            type='text'
+                        />
+                        <InputSettings
+                            value={surname}
+                            placeholder={users[currentUserId].surname}
+                            onChange={handleOnChangeSurname}
+                            edit={edit}
+                            type='text'
+                        />
+                        <InputSettings
+                            value={email}
+                            placeholder={users[currentUserId].email}
+                            onChange={handleOnChangeEmail}
+                            edit={edit}
+                            type='email'
+                        />
                         {
                             (edit) ?
                                 <div className={styles.buttonContainer}>
-                                    <button
-                                        className={styles.button}
-                                        onClick={handleSaveChangeButton}>
-                                        Сохранить изменения
-                                    </button>
+                                    <ButtonSettings
+                                        onClick={handleSaveChangeButton}
+                                        textButton='Сохранить изменения'
+                                    />
                                     <button
                                         className={styles.buttonCross}
                                         onClick={handleCancelChanges}
                                     />
                                 </div>
                                 :
-                                <button
-                                    className={styles.button}
-                                    onClick={handleClickButton}>
-                                    Редактировать
-                                </button>
+                                <ButtonSettings
+                                    onClick={handleClickButton}
+                                    textButton='Редактировать'
+                                />
+
                         }
                     </form>
                 </section>

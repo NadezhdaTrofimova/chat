@@ -59,7 +59,7 @@ const RecoverPasswordPage = () => {
     }
 
 
-    const [optionsRecPassInput] = React.useState([
+    const optionsRecPassInput = [
         {
             id: 8,
             placeholder: 'Email',
@@ -95,7 +95,7 @@ const RecoverPasswordPage = () => {
             value: passwordRepeatRecover,
             onChange: handleChangePasswordRepeatRecover
         }
-    ])
+    ]
 
     return (
         <div>

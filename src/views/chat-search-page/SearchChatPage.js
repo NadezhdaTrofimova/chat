@@ -1,10 +1,11 @@
 import React from "react";
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 import {useHistory} from "react-router-dom";
 
 import Header from "../../components/common/header/Header";
 import SearchInput from "../../components/chatSearchPage/searchInput/SearchInput";
 import LastMessage from "../../components/chatSearchPage/lastMessage/LastMessage";
+import {Chats, Messages, Users} from "../../selectors";
 import {addChat} from "../../slices/chatSlice";
 import iconSettings from '../../image/icons/icon-gear.png'
 import iconUser from '../../image/usersPhoto/photo-user3.png'
@@ -19,16 +20,12 @@ const SearchChatPage = () => {
     const [openInput, setOpenInput] = React.useState(false)
     const [inputCreateChatValue, setInputCreateChatValue] = React.useState('')
 
-    const chats = useSelector((state) => state.chats.chatsTitle)
-    const messages = useSelector((state) => state.chats.messages)
-    const users = useSelector((state) => state.usersData.users)
-
     const handleOnChangeInputCreateValue = (e) => {
         setInputCreateChatValue(e.target.value)
     }
 
     const getLastElem = (id) => {
-        return messages.filter(elem => elem.chat === id).pop()
+        return Messages().filter(elem => elem.chat === id).pop()
     }
 
     const handleCreateChat = () => {
@@ -52,14 +49,14 @@ const SearchChatPage = () => {
             </div>
             <div className={styles.messageMainContainer}>
                 <ul className={styles.messageContainer}>
-                    {chats.map((chat) =>
+                    {Chats().map((chat) =>
                         <LastMessage
                             id={chat.id}
                             key={chat.id}
                             chatsTitle={chat.title}
                             textMessage={getLastElem(chat.id).text}
                             timeTitle={getLastElem(chat.id).time}
-                            photoUser={users[getLastElem(chat.id).author].avatar}
+                            photoUser={Users()[getLastElem(chat.id).author].avatar}
                         />
                     )}
                 </ul>
