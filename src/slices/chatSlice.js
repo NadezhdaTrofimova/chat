@@ -23,6 +23,7 @@ export const userSlice = createSlice({
                 title: 'Кто убил Кеннеди?'
             },
         ],
+        newChatId: 4,
         currentChat: '',
         messages: [
             {
@@ -105,8 +106,8 @@ export const userSlice = createSlice({
                 id: 9,
                 chat: 2,
                 author: 2,
-                text: "С 80-х годов XVIII века и вплоть до XX века духовенство Русской православной церкви с враждебностью боролось с идеями и книгами\n" + +
-                        "французских философов-материалистов, разоблачавших сущность религии. В частности, духовное ведомство издавало литературу, в которой\n" +
+                text: "С 80-х годов XVIII века и вплоть до XX века духовенство Русской православной церкви с враждебностью боролось с идеями и книгами\n" +
+                    "французских философов-материалистов, разоблачавших сущность религии. В частности, духовное ведомство издавало литературу, в которой\n" +
                     " подвергало критике идеи Вольтера, добивалось конфискации и сожжения его произведений.\n" +
                     "В 1868 году русской духовной цензурой уничтожена книга Вольтера «Философия истории», в которой духовные цензоры обнаружили «глумление\n" +
                     " над истинами и опровержение священного писания».\n" +
@@ -128,12 +129,24 @@ export const userSlice = createSlice({
         directToCurrentChat: (state, action) => {
             state.currentChat = action.payload
         },
+        addChat: (state, action) => {
+            state.chatsTitle.push(
+                {
+                    id: state.newChatId,
+                    title: action.payload.inputCreateChatValue,
+                }
+            )
+            state.currentChat = state.newChatId
+            state.newChatId += 1
+        },
         addMessage: (state, action) => {
             state.messages.push(
                 {
+                    id: state.newMessageId,
                     chat: action.payload.currentChat,
                     author: action.payload.currentUser,
                     text: action.payload.textAreaValue,
+                    time: action.payload.time,
                 }
             )
             state.newMessageId += 1
@@ -145,6 +158,7 @@ export const userSlice = createSlice({
 export const {
     directToCurrentChat,
     addMessage,
+    addChat
 } = userSlice.actions;
 
 export default userSlice.reducer

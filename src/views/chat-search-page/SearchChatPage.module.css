@@ -60,3 +60,25 @@
     color: #ffffff;
     cursor: pointer;
 }
+
+.input {
+    position: fixed;
+    bottom: 70px;
+    right: 190px;
+    width: 140px;
+    height: 40px;
+    /*border-radius: 5px;*/
+    /*background: linear-gradient(206.57deg, #6476F4 0%, #3246D3 83.33%);*/
+    /*display: flex;*/
+    /*align-items: center;*/
+    /*justify-content: center;*/
+}
+
+.inputTitle {
+    font-family: Montserrat, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #3246D3;
+}

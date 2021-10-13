@@ -11,25 +11,36 @@ import Header from "../../components/common/header/Header";
 import SearchInput from "../../components/chatSearchPage/searchInput/SearchInput";
 import LastMessage from "../../components/chatSearchPage/lastMessage/LastMessage";
 
+import {addChat} from "../../slices/chatSlice";
 
 const SearchChatPage = () => {
 
     const history = useHistory();
+    const dispatch = useDispatch();
 
+    const [openInput, setOpenInput] = React.useState(false)
+    const [inputCreateChatValue, setInputCreateChatValue] = React.useState('')
 
     const chats = useSelector((state) => state.chats.chatsTitle)
     const messages = useSelector((state) => state.chats.messages)
     const users = useSelector((state) => state.usersData.users)
 
+    const handleOnChangeInputCreateValue = (e) => {
+        setInputCreateChatValue(e.target.value)
+    }
 
     const getLastElem = (id) => {
         return messages.filter(elem => elem.chat === id).pop()
     }
 
     const handleCreateChat = () => {
+        dispatch(addChat({inputCreateChatValue}))
         history.push('messages')
     }
 
+    const handleOpenInput = () => {
+        setOpenInput(true)
+    }
 
     return (
         <div className={styles.searchChatPage}>
@@ -56,9 +67,19 @@ const SearchChatPage = () => {
                 </ul>
                 <div className={styles.buttonContainer}>
                     <p
-                        onClick={handleCreateChat}
+                        onClick={openInput ? handleCreateChat : handleOpenInput}
                         className={styles.buttonTitle}>Создать чат</p>
                 </div>
+                {openInput &&
+                <div className={styles.input}>
+                    <input
+                        value={inputCreateChatValue}
+                        onChange={handleOnChangeInputCreateValue}
+                        className={styles.inputTitle}
+                        placeholder='Введите название чата'
+                    />
+                </div>
+                }
             </div>
         </div>
     )

@@ -10,27 +10,30 @@ import {addMessage} from "../../slices/chatSlice";
 
 const MessagesPage = () => {
 
-    const chats = useSelector((state) => state.chats.chatsTitle)
+    const dispatch = useDispatch();
+
+    const [textAreaValue, setTextAreaValue] = React.useState('')
+
     const messages = useSelector((state) => state.chats.messages)
     const users = useSelector((state) => state.usersData.users)
     const currentUser = useSelector((state) => state.usersData.currentUser.id)
     const currentChat = useSelector((state) => state.chats.currentChat)
 
-
     const getMessagesOfTheCurrentChat = (id) => {
         return messages.filter(elem => elem.chat === id).reverse();
     }
-
-    const [textAreaValue, setTextAreaValue] = React.useState('')
 
     const handleOnChangeTextArea = (e) => {
         setTextAreaValue(e.target.value)
     }
 
-    const dispatch = useDispatch();
+    const moment = require('moment');
+    require('moment/locale/ru');
+    const time = moment().format('LT');
+
 
     const handleSendMessages = () => {
-        dispatch(addMessage({currentChat, currentUser, textAreaValue}))
+        dispatch(addMessage({currentChat, currentUser, textAreaValue, time}))
         setTextAreaValue('')
     }
 

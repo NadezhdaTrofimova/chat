@@ -9,7 +9,7 @@
 .myItemContainer {
     background-color: #FFFFFF;
     width: 100%;
-    padding: 20px;
+    padding: 10px 20px;
     display: flex;
     flex-direction: row-reverse;
 }
@@ -71,7 +71,7 @@
     align-items: center;
     justify-content: center;
     padding: 10px;
-    margin-right: 55px;
+    margin-right: 65px;
 }
 
 .myContainerMessage {
@@ -83,12 +83,13 @@
     align-items: center;
     justify-content: center;
     padding: 10px;
-    margin-left: 55px;
+    margin-left: 65px;
 }
 
 .messageText {
     font-family: Montserrat, sans-serif;
     font-size: 14px;
     font-weight: 400;
+    word-break: break-word
 }
 

@@ -2,8 +2,9 @@ import React from 'react';
 import styles from './MessageItem.module.css'
 
 const MessageItem = ({textMessage, timeTitle, photoUser, isMyAccount}) => {
-    return (
 
+
+    return (
         <>
             <li>
                 <div className={`${isMyAccount ? styles.myItemContainer : styles.itemContainer}`}>
