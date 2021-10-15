@@ -4,7 +4,6 @@ import {useDispatch, useSelector} from "react-redux";
 import Header from "../../components/common/header/Header";
 import MessageField from "../../components/messagesPage/messageField/MessageField";
 import MessageItem from "../../components/messagesPage/messageItem/MessageItem";
-import {Messages} from "../../selectors";
 import {addMessage} from "../../slices/chatSlice";
 import iconSettings from '../../image/icons/icon-gear.png'
 import iconUser from '../../image/usersPhoto/photo-user3.png'
@@ -17,13 +16,13 @@ const MessagesPage = () => {
 
     const [textAreaValue, setTextAreaValue] = React.useState('')
 
-    // const messages = useSelector((state) => state.chats.messages)
+    const messages = useSelector((state) => state.chats.messages)
     const users = useSelector((state) => state.usersData.users)
     const currentUser = useSelector((state) => state.usersData.currentUser.id)
     const currentChat = useSelector((state) => state.chats.currentChat)
 
     const getMessagesOfTheCurrentChat = (id) => {
-        return Messages().filter(elem => elem.chat === id).reverse();
+        return messages.filter(elem => elem.chat === id).reverse();
     }
 
     const handleOnChangeTextArea = (e) => {

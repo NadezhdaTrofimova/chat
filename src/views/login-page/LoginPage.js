@@ -6,7 +6,6 @@ import BottomForm from "../../components/common/form/bottomForm/BottomForm";
 import ModalWindow from "../../components/common/modalWindow/ModalWindow";
 import Form from "../../components/common/form/Form";
 import HeaderForm from "../../components/common/form/headerForm/HeaderForm";
-// import {Users} from "../../selectors";
 import {loggedInUser} from "../../slices/userSlice";
 import iconOpenEye from "../../image/icons/icon-open-eye.png";
 import iconLetter from "../../image/icons/icon-letter.png";
