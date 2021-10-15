@@ -1,0 +1,68 @@
+.settingsPage {
+    background-color: #F5F5F5;
+}
+
+.headerContainer {
+    position: fixed;
+    width: 100%;
+}
+
+.mainContainer {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+}
+
+.photoContainer {
+    flex-grow: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+    background: linear-gradient(90.01deg, #2A8BF2 0.01%, #0A6CD6 99.99%);
+    box-sizing: content-box;
+    border: 1px solid #0A6CD6;
+    padding: 130px 70px;
+}
+
+.userPhoto {
+    border: 1px solid #C4C4C4;
+    height: 200px;
+    width: 200px;
+    left: 312px;
+    top: 201px;
+    border-radius: 15px;
+
+}
+
+.changePhotoTitle {
+    font-family: Montserrat, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    align-self: center;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.formContainer {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+}
+
+
+.buttonContainer {
+    display: flex;
+}
+
+.buttonCross {
+    width: 45px;
+    height: 45px;
+    background: no-repeat url(../../image/icons/icon-cross.png);
+    border: none;
+    padding: 10px;
+    margin: 20px 10px;
+    cursor: pointer;
+}

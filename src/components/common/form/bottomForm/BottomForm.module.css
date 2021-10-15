@@ -1,0 +1,28 @@
+.link {
+    display: flex;
+    justify-content: space-between;
+    border: none;
+    margin: 0 0 25px 0;
+    font-family: Montserrat, sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    width: 400px;
+}
+
+.linkBlack {
+    color: #041122;
+    text-decoration: none;
+}
+
+.linkBlue {
+    color: #6476F4;
+}
+
+
+.linkBlack:active {
+    text-decoration: underline;
+}
+
+.linkBlue:active {
+    color: #3246D3;
+}

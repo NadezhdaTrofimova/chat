@@ -1,0 +1,67 @@
+.itemContainer {
+    background-color: #FFFFFF;
+    height: content-box;
+    width: 100%;
+    border-radius: 12px;
+    margin: 15px 0;
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    grid-template-rows: 60px 1fr;
+    /*grid-template-columns: 1fr 60px;*/
+    /*grid-template-rows: 1fr 60px;*/
+    grid-gap: 0 10px;
+    padding: 20px;
+}
+
+.avatarContainer {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.userAvatar {
+    border-radius: 50%;
+    grid-area: 1;
+    /*grid-area: 1 / 2;*/
+    width: 45px;
+    height: 45px;
+}
+
+.timeTitle {
+    grid-area: 2 / 1;
+    /*grid-area: 2 / 2;*/
+    font-family: Montserrat, sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    opacity: 0.5;
+    text-align: center;
+}
+
+.name {
+    grid-area: 1 / 2;
+    /*grid-area: 1 / 1;*/
+    font-family: Montserrat, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 30px;
+}
+
+.containerMessage {
+    grid-area: 2 / 2;
+    /*grid-area: 2 / 1;*/
+    background-color: #F8F9FB;
+    border-radius: 10px;
+    width: 100%;
+    display: inline-block;
+    padding: 10px;
+}
+
+.messageText {
+    font-family: Montserrat, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    word-break: break-word
+}
+
