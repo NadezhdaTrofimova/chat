@@ -47,7 +47,7 @@ const RecoverPasswordPage = () => {
     const handleFormRecoverPasswordSubmit = (e) => {
         e.preventDefault();
         if (checkPresenceUser(emailRecover))
-            alert("Пользователь с таким паролем не существует!")
+            alert("Пользователь с таким e-mail не существует!")
         else if (passwordRecover.length < 3)
             alert("Пароль слишком короткий!")
         else if (passwordRecover !== passwordRepeatRecover)

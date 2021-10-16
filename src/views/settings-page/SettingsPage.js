@@ -49,7 +49,7 @@ const SettingsPage = () => {
         if (name === '' || surname === '' || email === '')
             alert('Поля не могут быть пустыми!')
         else if (!email.includes('@'))
-            alert("E-mail должен сожержать @!")
+            alert("E-mail должен содержать @!")
         else {
             dispatch(changeUserInfo({currentUserId, name, surname, email}))
             setEdit(!edit)
