@@ -48,5 +48,8 @@
 
 ### Ссылка на приложение:
 
-[Приложение Чат](https://app-chat0.herokuapp.com/)
+[Приложение Чат](https://app-chat0.herokuapp.com/)  
+(данные для тестового входа
+e-mail na@gmail.com
+пароль 123)
 
